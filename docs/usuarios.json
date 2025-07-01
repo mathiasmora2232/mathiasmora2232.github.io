@@ -1,0 +1,10 @@
+[
+  {
+    "email": "usuario1@ejemplo.com",
+    "password": "REDACTED_LOCAL_SECRET"
+  },
+  {
+    "email": "usuario2@ejemplo.com",
+    "password": "REDACTED_LOCAL_SECRET"
+  }
+]
