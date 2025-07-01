@@ -1,0 +1,81 @@
+
+	.page-title .main-title{
+		padding-top: 50px;
+		text-align: center;
+		font-family: 'Open Sans', sans-serif;
+		font-size: 3vw;
+	}
+	.form-for-login .field-note{
+		margin-left: 37vw;
+	}
+    .form-for-login .filed-note span{
+		font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+		text-decoration: lightcyan;
+	}
+	.form-for-login label{
+		font-size: 22px;
+		margin-left: 37vw;
+	}
+	.form-for-login .email input{
+		font-size: 16px;
+		width: 330px;
+		margin-left:  37vw;
+		border-radius: 5px;
+		border: 2px solid #000;
+		height: 26px;
+	}
+	.form-for-login .password-remainder{
+		margin-left: 37vw;
+		text-decoration: none;
+		color: #000;
+	}
+	.form-for-login .password-remainder:hover{
+		color: rgb(55, 84, 165);
+		text-decoration: underline;
+
+	}
+	.form-for-login  .button-login{
+		margin-left: 37vw;
+		
+	}
+	.form-for-login  .button-login a{
+		text-decoration: none;
+		color: #000
+	}
+	.form-for-login .button-login-2{
+		font-size: 30px;
+		width: 230px;
+		background-color: #ffcb31;
+		border: 2px solid #ffcb31 ;
+		border-radius: 10px;
+		
+	}
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 30px;
+  background-color: #ffffff;
+  color: #333;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  padding: 10px;
+  width: 220px;
+  z-index: 100;
+}
+
+.dropdown-menu li {
+  list-style: none;
+  padding: 6px 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.dropdown-menu li:last-child {
+  border-bottom: none;
+}
+
+.dropdown-menu li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+}
