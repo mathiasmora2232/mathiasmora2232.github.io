@@ -24,19 +24,64 @@
     <li><a href="sobrenosotros.html">Materias</a></li>
     <li><a href="Malla.html">Malla</a></li>
     <li><a href="Calendario.html">Calendario</a></li>
-    <li><a href="cuenta.html">Mi cuenta</a></li>
+    <li><a href="cuenta.html">Mi Cuenta</a></li>
   </ul>
 
   <!-- Botón de notificaciones separado -->
-  <div class="notifications">
+  <div class="notifications" id="notificationsBtn">
     <span class="bell">🔔</span>
-    <ul class="dropdown-menu">
-      <li><a href="#">Tarea nueva de Matemáticas</a></li>
-      <li><a href="#">Calificación subida</a></li>
-      <li><a href="#">Mensaje de tu profesor</a></li>
-    </ul>
   </div>
-
+  <div class="notifications-panel" id="notificationsPanel">
+    <div class="panel-header">
+      <span class="panel-title">Notificaciones</span>
+      <button class="close-btn" id="closeNotifications">✖</button>
+    </div>
+    <div class="panel-tabs">
+      <button class="tab-btn active" id="tabUnread">No leídas</button>
+      <button class="tab-btn" id="tabAll">Todas</button>
+    </div>
+    <div class="panel-content">
+      <div class="notifications-list" id="unreadList">
+        <div class="notification unread">
+          <div class="notif-date">01/07/2025<br><span class="notif-hour">08:30</span></div>
+          <div class="notif-info">
+            <div class="notif-title">Tarea nueva de Matemáticas</div>
+            <div class="notif-desc">Se ha asignado una nueva tarea sobre ecuaciones cuadráticas.</div>
+          </div>
+        </div>
+        <div class="notification unread">
+          <div class="notif-date">30/06/2025<br><span class="notif-hour">19:10</span></div>
+          <div class="notif-info">
+            <div class="notif-title">Mensaje de tu profesor</div>
+            <div class="notif-desc">El profesor Carlos ha enviado un mensaje sobre el examen.</div>
+          </div>
+        </div>
+      </div>
+      <div class="notifications-list" id="allList" style="display:none;">
+        <div class="notification unread">
+          <div class="notif-date">01/07/2025<br><span class="notif-hour">08:30</span></div>
+          <div class="notif-info">
+            <div class="notif-title">Tarea nueva de Matemáticas</div>
+            <div class="notif-desc">Se ha asignado una nueva tarea sobre ecuaciones cuadráticas.</div>
+          </div>
+        </div>
+        <div class="notification unread">
+          <div class="notif-date">30/06/2025<br><span class="notif-hour">19:10</span></div>
+          <div class="notif-info">
+            <div class="notif-title">Mensaje de tu profesor</div>
+            <div class="notif-desc">El profesor Carlos ha enviado un mensaje sobre el examen.</div>
+          </div>
+        </div>
+        <div class="notification">
+          <div class="notif-date">29/06/2025<br><span class="notif-hour">15:00</span></div>
+          <div class="notif-info">
+            <div class="notif-title">Calificación subida</div>
+            <div class="notif-desc">Tu calificación de Historia ya está disponible.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="burger">
     <div class="line1"></div>
     <div class="line2"></div>
