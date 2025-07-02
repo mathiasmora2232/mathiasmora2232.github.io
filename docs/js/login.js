@@ -20,3 +20,40 @@ document.querySelector('.form-for-login').addEventListener('submit', function(e)
             console.error(error);
         });
 });
+navSlide();
+// Notificaciones panel
+const notificationsBtn = document.getElementById('notificationsBtn');
+const notificationsPanel = document.getElementById('notificationsPanel');
+const closeNotifications = document.getElementById('closeNotifications');
+const tabUnread = document.getElementById('tabUnread');
+const tabAll = document.getElementById('tabAll');
+const unreadList = document.getElementById('unreadList');
+const allList = document.getElementById('allList');
+
+
+notificationsBtn.addEventListener('click', () => {
+  // Si ya está visible, ciérralo
+  if (notificationsPanel.style.display === 'flex') {
+    notificationsPanel.style.display = 'none';
+  } else {
+    notificationsPanel.style.display = 'flex';
+  }
+});
+
+closeNotifications.addEventListener('click', () => {
+  notificationsPanel.style.display = 'none';
+});
+
+tabUnread.addEventListener('click', () => {
+  tabUnread.classList.add('active');
+  tabAll.classList.remove('active');
+  unreadList.style.display = '';
+  allList.style.display = 'none';
+});
+
+tabAll.addEventListener('click', () => {
+  tabAll.classList.add('active');
+  tabUnread.classList.remove('active');
+  allList.style.display = '';
+  unreadList.style.display = 'none';
+});
