@@ -1,27 +1,471 @@
+/* Homepage CSS Renovado - EduConnect */
+/* Diseño simplificado: eliminados iconos flotantes, estadísticas, acciones rápidas, clima y logros */
 main.dashboard {
     margin-top: 80px;
-    padding: 2rem;
-    font-family: 'Poppins', sans-serif;
-    background-color: #ffff;
+    padding: 0;
+    font-family: "Castoro", serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    overflow-x: hidden;
 }
 
-.welcome {
+/* Hero Section */
+.hero-section {
+    padding: 60px 20px;
     text-align: center;
-    margin-bottom: 2rem;
+    position: relative;
+    overflow: hidden;
+    background: white;
 }
 
-.panel {
+.hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.hero-text {
+    text-align: center;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    color: #4a90e2;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+}
+
+.hero-subtitle {
+    font-size: 1.4rem;
+    color: #666;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+/* Dashboard Cards */
+.dashboard-cards {
+    background: #f8f9fa;
+    padding: 60px 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.card.enhanced {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border: 1px solid #e0e0e0;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.card.enhanced::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #4a90e2, #667eea);
+}
+
+.card.enhanced:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.card-header {
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 1.5rem;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
 }
 
-.card {
-    background-color: rgb(218, 212, 212);
-    padding: 1rem 1.5rem;
-    border-radius: 10px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    width: 3000px;
+.card-header h2 {
+    color: #333;
+    font-size: 1.5rem;
+    margin: 0;
+    font-weight: bold;
 }
-	
+
+/* Progress Card */
+.trend-indicator {
+    background: #e8f5e8;
+    color: #4caf50;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.progress-bar-container {
+    position: relative;
+    margin: 20px 0;
+}
+
+.progress-bar-bg {
+    width: 100%;
+    height: 12px;
+    background: #f0f0f0;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.progress-bar-fill.animated {
+    height: 100%;
+    background: linear-gradient(90deg, #4a90e2, #667eea);
+    border-radius: 6px;
+    width: 0%;
+    transition: width 2s ease-out;
+    position: relative;
+}
+
+.progress-bar-fill.animated::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    animation: shimmer 2s infinite;
+}
+
+.progress-text {
+    position: absolute;
+    right: 0;
+    top: -25px;
+    font-weight: bold;
+    color: #4a90e2;
+}
+
+.progress-breakdown {
+    margin-top: 20px;
+}
+
+.subject-progress {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    gap: 15px;
+}
+
+.subject-progress span:first-child {
+    min-width: 80px;
+    font-size: 0.9rem;
+}
+
+.mini-progress {
+    flex: 1;
+    height: 6px;
+    background: #f0f0f0;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.mini-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #4a90e2, #667eea);
+    border-radius: 3px;
+    transition: width 1s ease-out;
+}
+
+/* Tasks Card */
+.badge {
+    background: #ff4757;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.tasks-list {
+    margin-top: 15px;
+}
+
+.task-item {
+    padding: 15px;
+    border-radius: 12px;
+    border-left: 4px solid;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.task-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.task-item.high {
+    background: #ffebee;
+    border-left-color: #f44336;
+}
+
+.task-item.medium {
+    background: #fff3e0;
+    border-left-color: #ff9800;
+}
+
+.task-item.low {
+    background: #e8f5e8;
+    border-left-color: #4caf50;
+}
+
+.task-subject {
+    font-size: 0.8rem;
+    color: #666;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.task-title {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.task-due {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.task-priority {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 10px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.task-priority.high {
+    background: #f44336;
+    color: white;
+}
+
+.task-priority.medium {
+    background: #ff9800;
+    color: white;
+}
+
+.task-priority.low {
+    background: #4caf50;
+    color: white;
+}
+
+/* Messages Card */
+.notification-dot {
+    background: #ff4757;
+    color: white;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.messages-list {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.message-item {
+    display: flex;
+    align-items: flex-start;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.message-item.unread {
+    background: #e3f2fd;
+    border-left: 4px solid #2196f3;
+}
+
+.message-item:hover {
+    background: #f5f5f5;
+    transform: translateX(5px);
+}
+
+.message-avatar {
+    font-size: 2rem;
+    margin-right: 15px;
+}
+
+.message-content {
+    flex: 1;
+}
+
+.message-sender {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.message-text {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+.message-time {
+    color: #999;
+    font-size: 0.8rem;
+}
+
+.message-status {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-left: 10px;
+}
+
+.message-status.unread {
+    background: #2196f3;
+}
+
+.message-status.read {
+    background: #ccc;
+}
+
+/* Schedule Card */
+.current-time {
+    background: #4a90e2;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.schedule-timeline {
+    position: relative;
+    padding-left: 30px;
+}
+
+.schedule-timeline::before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #e0e0e0;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -23px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: white;
+    border: 3px solid;
+}
+
+.timeline-item.completed::before {
+    border-color: #4caf50;
+    background: #4caf50;
+}
+
+.timeline-item.current::before {
+    border-color: #ff9800;
+    background: #ff9800;
+}
+
+.timeline-item.upcoming::before {
+    border-color: #ccc;
+}
+
+.timeline-time {
+    font-weight: bold;
+    color: #4a90e2;
+    min-width: 80px;
+}
+
+.timeline-content {
+    flex: 1;
+}
+
+.timeline-subject {
+    font-weight: bold;
+    color: #333;
+}
+
+.timeline-location {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.timeline-status {
+    font-size: 1.2rem;
+}
+
+/* Animations */
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .dashboard-cards {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .dashboard-cards {
+        grid-template-columns: 1fr;
+        padding: 40px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .card.enhanced {
+        padding: 20px;
+    }
+}

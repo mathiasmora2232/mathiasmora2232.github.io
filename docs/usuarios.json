@@ -1,10 +1,38 @@
 [
   {
-    "email": "usuario1@ejemplo.com",
-    "password": "1234"
+    "email": "estudiante1@ejemplo.com",
+    "username": "estudiante1",
+    "password": "1234",
+    "rol": "estudiante"
   },
   {
-    "email": "usuario2@ejemplo.com",
-    "password": "abcd"
+   "email":"estudiante3@ejemplo.com",
+   "username": "mora",
+   "password": "mora1",
+   "rol": "estudiante"
+  },
+  {
+    "email": "estudiante2@ejemplo.com",
+    "username": "estudiante2",
+    "password": "abcd",
+    "rol": "estudiante"
+  },
+  {
+    "email": "profe1@ejemplo.com",
+    "username": "profejuan",
+    "password": "profe123",
+    "rol": "profe"
+  },
+  {
+    "email": "profe2@ejemplo.com",
+    "username": "profemaria",
+    "password": "profe456",
+    "rol": "profe"
+  },
+  {
+    "email": "admin@ejemplo.com",
+    "username": "admin",
+    "password": "adminpass",
+    "rol": "admin"
   }
 ]

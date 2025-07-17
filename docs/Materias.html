@@ -5,11 +5,14 @@
   <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Education</title>
-    <link rel="icon" href="imagenes/bluemarket.ico">
+    <title>EduConnect</title>
+    <link rel="icon" href="img/logojpg-removebg-preview.ico">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Castoro:ital@0;1&display=swap" rel="stylesheet">   
     <link rel="stylesheet" href="css/Global.css">
     <link rel="stylesheet" href="css/materias.css">
   
@@ -24,17 +27,16 @@
     <div id="main-container">
       <header>
  <nav>
-  <div class="logo">Education</div>
+  <div class="logo">EduConnect</div>
 
   <ul class="nav-links">
-    <li><a href="Homepage.html">Pagina de Inicio</a></li>
+    <li><a href="Homepage.html">Página de Inicio</a></li>
     <li><a href="Materias.html">Materias</a></li>
     <li><a href="Malla.html">Malla</a></li>
     <li><a href="Calendario.html">Calendario</a></li>
     <li><a href="cuenta.html">Mi cuenta</a></li>
+    <li id="admin-link" style="display:none;"><a href="admin/dashboard-admin.html">Panel Admin</a></li>
   </ul>
-
-  <!-- Botón de notificaciones separado -->
   <div class="notifications" id="notificationsBtn">
     <span class="bell">🔔</span>
   </div>
@@ -89,7 +91,6 @@
       </div>
     </div>
   </div>
-  <!-- Botón Burger para móviles -->
   <div class="burger">
     <div class="line1"></div>
     <div class="line2"></div>
@@ -99,86 +100,100 @@
 </header>
 <main class="materias">
   <section class="materiascurso">
-    <div>
+    <div class="materias-container">
       <h2>Materias cursando</h2>
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit quae dignissimos, dolorem laborum neque repellendus, similique blanditiis maxime illum, tempore porro voluptatibus debitis expedita optio eligendi molestias aliquid? Placeat, aliquid.</p>
+      <div class="materias-grid">
+        <div class="materia-card">
+          <a href="cursos/Programación.html" class="materia-link">
+            <div class="materia-header">
+              <div class="materia-icon">💻</div>
+              <h3>Programacion I</h3>
+            </div>
+            <div class="materia-info">
+              <p class="profesor">Ing. David Vaca</p>
+              <p class="horario">Lun, Mié, Vie - 8:00 AM</p>
+              <div class="progress-bar">
+                <div class="progress" style="width: 75%"></div>
+              </div>
+              <span class="progress-text">75% completado</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="materia-card">
+          <a href="cursos/MatematicaDiscreta.html" class="materia-link">
+            <div class="materia-header">
+              <div class="materia-icon">🧮</div>
+              <h3>Matematicas Discretas</h3>
+            </div>
+            <div class="materia-info">
+              <p class="profesor">Dra. Carmen Aguilar</p>
+              <p class="horario">Mar, Jue - 10:00 AM</p>
+              <div class="progress-bar">
+                <div class="progress" style="width: 60%"></div>
+              </div>
+              <span class="progress-text">60% completado</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="materia-card">
+          <a href="cursos/Fisica1.html" class="materia-link">
+            <div class="materia-header">
+              <div class="materia-icon">🔬</div>
+              <h3>Física I</h3>
+            </div>
+            <div class="materia-info">
+              <p class="profesor">Msc. Romina Andrade</p>
+              <p class="horario">Lun, Mié - 2:00 PM</p>
+              <div class="progress-bar">
+                <div class="progress" style="width: 85%"></div>
+              </div>
+              <span class="progress-text">85% completado</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="materia-card">
+          <a href="cursos/ingles.html" class="materia-link">
+            <div class="materia-header">
+              <div class="materia-icon">📖</div>
+              <h3>Inglés Técnico</h3>
+            </div>
+            <div class="materia-info">
+              <p class="profesor">Lic. Pilar Mora</p>
+              <p class="horario">Jue, Vie - 3:00 PM</p>
+              <div class="progress-bar">
+                <div class="progress" style="width: 70%"></div>
+              </div>
+              <span class="progress-text">70% completado</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="materia-card">
+          <a href="cursos/Contabilidadgeneral.html" class="materia-link">
+            <div class="materia-header">
+              <div class="materia-icon">📊</div>
+              <h3>Contabilidad General</h3>
+            </div>
+            <div class="materia-info">
+              <p class="profesor">Msc. Viviana Torres</p>
+              <p class="horario">Lun, Jue - 9:00 AM</p>
+              <div class="progress-bar">
+                <div class="progress" style="width: 65%"></div>
+              </div>
+              <span class="progress-text">65% completado</span>
+            </div>
+          </a>
+        </div>
+      </div>
     </div>
   </section>
-
-
 </main>
 
 
-   
-    <script src="js/app.js"></script>
-  </body>
-  </html><!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Education</title>
-    <link rel="icon" href="imagenes/bluemarket.ico">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/Global.css">
-    <link rel="stylesheet" href="css/materias.css">
-  
-  <title>bluemarket</title>
-</head>
-
-<body>
-
-  </head>
-
-  <body>
-    <div id="main-container">
-      <header>
- <nav>
-  <div class="logo">Education</div>
-
-  <ul class="nav-links">
-    <li><a href="Homepage.html">Pagina de Inicio</a></li>
-    <li><a href="Materias.html">Materias</a></li>
-    <li><a href="Malla.html">Malla</a></li>
-    <li><a href="Calendario.html">Calendario</a></li>
-    <li><a href="cuenta.html">Mi cuenta</a></li>
-  </ul>
-
-  <!-- Botón de notificaciones separado -->
-  <div class="notifications">
-    <span class="bell">🔔</span>
-    <ul class="dropdown-menu">
-      <li><a href="#">Tarea nueva de Matemáticas</a></li>
-      <li><a href="#">Calificación subida</a></li>
-      <li><a href="#">Mensaje de tu profesor</a></li>
-    </ul>
-  </div>
-
-  <!-- Botón Burger para móviles -->
-  <div class="burger">
-    <div class="line1"></div>
-    <div class="line2"></div>
-    <div class="line3"></div>
-  </div>
-</nav>
-</header>
-<main class="materias">
-  <section class="materiascurso">
-    <div>
-      <h2>Materias cursando</h2>
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit quae dignissimos, dolorem laborum neque repellendus, similique blanditiis maxime illum, tempore porro voluptatibus debitis expedita optio eligendi molestias aliquid? Placeat, aliquid.</p>
-    </div>
-  </section>
-
-
-</main>
-
-
-   cs
-    <script src="js/app.js"></script>
+<script src="js/app.js"></script>
+<script src="js/adminlink.js"></script>
   </body>
   </html>

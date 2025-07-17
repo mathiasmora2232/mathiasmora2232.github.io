@@ -4,27 +4,29 @@
 <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Education</title>
-    <link rel="icon" href="imagenes/bluemarket.ico">
+    <title>EduConnect</title>
+    <link rel="icon" href="img/logojpg-removebg-preview.ico">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Castoro:ital@0;1&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/Global.css">
-    <link rel="stylesheet" type="css" href="css/estilos6.css">
+    <link rel="stylesheet" href="css/Cuenta.css">
   </head>
 <body>
     <header>
              <nav>
-  <div class="logo">Education</div>
-  
+  <div class="logo">EduConnect</div>
   <ul class="nav-links">
-    <li><a href="Homepage.html">Pagina de Inicio</a></li>
+    <li><a href="Homepage.html">Página de Inicio</a></li>
     <li><a href="Materias.html">Materias</a></li>
     <li><a href="Malla.html">Malla</a></li>
     <li><a href="Calendario.html">Calendario</a></li>
     <li><a href="cuenta.html">Mi cuenta</a></li>
+    <li id="admin-link" style="display:none;"><a href="admin/dashboard-admin.html">Panel Admin</a></li>
   </ul>
-  <!-- Botón de notificaciones separado -->
   <div class="notifications" id="notificationsBtn">
     <span class="bell">🔔</span>
   </div>
@@ -79,17 +81,71 @@
       </div>
     </div>
   </div>
-
+  
   <div class="burger">
     <div class="line1"></div>
     <div class="line2"></div>
-    <div class="line3"></div>
+    <div class="line3"></div> 
   </div>
 </nav>
-
-        
-         </header>
-          
-    <script src="js/app.js"></script>
+</header>
+<section class="container">
+  <div class="icon">
+    <div class="profile">
+      <img src="img/criAPDObnbY3yLh0M-zCPw==.png" alt="Foto de perfil">
+    </div>
+  </div>
+  <div class="account-info">
+    <h2>Mi Cuenta</h2>
+    <p><b>Usuario:</b> <span id="username-display">(cargando...)</span></p>
+    <form id="user-data-form">
+      <div class="form-group"><label for="nombre">Nombre completo:</label><input type="text" id="nombre" name="nombre"></div>
+      <div class="form-group"><label for="pasaporte">Pasaporte:</label><input type="text" id="pasaporte" name="pasaporte"></div>
+      <div class="form-group"><label for="fecha_nacimiento">Fecha de nacimiento:</label><input type="date" id="fecha_nacimiento" name="fecha_nacimiento"></div>
+      <div class="form-group"><label for="sexo">Sexo:</label>
+        <select id="sexo" name="sexo">
+          <option value="">Seleccione</option>
+          <option value="Masculino">Masculino</option>
+          <option value="Femenino">Femenino</option>
+          <option value="Otro">Otro</option>
+        </select>
+      </div>
+      <div class="form-group"><label for="estado_civil">Estado civil:</label>
+        <select id="estado_civil" name="estado_civil">
+          <option value="">Seleccione</option>
+          <option value="Soltero/a">Soltero/a</option>
+          <option value="Casado/a">Casado/a</option>
+          <option value="Divorciado/a">Divorciado/a</option>
+          <option value="Viudo/a">Viudo/a</option>
+        </select>
+      </div>
+      <div class="form-group"><label for="tipo_sangre">Tipo de sangre:</label>
+        <select id="tipo_sangre" name="tipo_sangre">
+          <option value="">Seleccione</option>
+          <option value="A+">A+</option>
+          <option value="A-">A-</option>
+          <option value="B+">B+</option>
+          <option value="B-">B-</option>
+          <option value="AB+">AB+</option>
+          <option value="AB-">AB-</option>
+          <option value="O+">O+</option>
+          <option value="O-">O-</option>
+        </select>
+      </div>
+      <div class="form-group"><label for="provincia_nacimiento">Provincia de nacimiento:</label><input type="text" id="provincia_nacimiento" name="provincia_nacimiento"></div>
+      <div class="form-group"><label for="canton">Cantón:</label><input type="text" id="canton" name="canton"></div>
+      <div class="form-group"><label for="ciudad">Ciudad:</label><input type="text" id="ciudad" name="ciudad"></div>
+      <div class="form-group"><label for="correo">Correo personal:</label><input type="email" id="correo" name="correo"></div>
+      <div class="form-group"><label for="correo_institucional">Correo institucional:</label><input type="email" id="correo_institucional" name="correo_institucional"></div>
+      <button type="submit" class="save-btn" id="save-btn">Guardar datos</button>
+    </form>
+    <button id="logout-btn" class="logout-btn">Cerrar sesión</button>
+    </form>
+    <div id="save-msg" style="display:none; color:green; margin-top:10px;">¡Datos guardados!</div>
+  </div>
+</section>
+<script src="js/app.js"></script>
+<script src="js/cuenta.js"></script>
+<script src="js/adminlink.js"></script>
 </body>
 </html>

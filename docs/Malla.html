@@ -4,29 +4,31 @@
 <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Education</title>
-    <link rel="icon" href="imagenes/bluemarket.ico">
+    <title>EduConnect</title>
+    <link rel="icon" href="img/logojpg-removebg-preview.ico">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Castoro:ital@0;1&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/Global.css">
-	<link rel="stylesheet" type="text/css" href="css/estilos4.css">
+    <link rel="stylesheet" type="text/css" href="css/malla.css">
 
 </head>
 <body>
     <header>  
         <nav>
-  <div class="logo">Education</div>
+  <div class="logo">EduConnect</div>
   
   <ul class="nav-links">
-    <li><a href="Homepage.html">Pagina de Inicio</a></li>
+    <li><a href="Homepage.html">Página de Inicio</a></li>
     <li><a href="Materias.html">Materias</a></li>
     <li><a href="Malla.html">Malla</a></li>
     <li><a href="Calendario.html">Calendario</a></li>
     <li><a href="cuenta.html">Mi cuenta</a></li>
+    <li id="admin-link" style="display:none;"><a href="admin/dashboard-admin.html">Panel Admin</a></li>
   </ul>
-
-  <!-- Botón de notificaciones separado -->
   <div class="notifications" id="notificationsBtn">
     <span class="bell">🔔</span>
   </div>
@@ -87,28 +89,148 @@
     <div class="line3"></div>
   </div>
 </nav>
-			</header>
-			<div >
+      </header>
+      
+      <main class="malla-container">
+        <div class="page-header">
+          <h1>Malla Curricular</h1>
+          <p class="page-subtitle">Propuesta de Malla por Semestres - Carrera de Ingeniería en Sistemas</p>
+        </div>
 
-				<article>
-					<section class="descripcion">
-						<h1 >
-							somos una pagina web que vende productos tecnologicos al por mayor y menor
-						</h1>
-						<div>
+        <div class="malla-grid">
+          <!-- 1er Semestre -->
+          <div class="semestre-card">
+            <div class="semestre-header">
+              <h2>1er Semestre</h2>
+              <div class="semestre-badge">5 Materias</div>
+            </div>
+            <div class="materias-list">
+              <div class="materia-item">
+                <div class="materia-name">Programación I</div>
+                <div class="profesor-name">Ing. David Vaca</div>
+              </div>
+              <div class="materia-item">
+                <div class="materia-name">Matemáticas Discretas</div>
+                <div class="profesor-name">Dra. Carmen Aguilar</div>
+              </div>
+              <div class="materia-item">
+                <div class="materia-name">Física I</div>
+                <div class="profesor-name">Msc. Romina Andrade</div>
+              </div>
+              <div class="materia-item">
+                <div class="materia-name">Inglés Técnico</div>
+                <div class="profesor-name">Lic. Pilar Mora</div>
+              </div>
+              <div class="materia-item">
+                <div class="materia-name">Contabilidad General</div>
+                <div class="profesor-name">Msc. Viviana Torres</div>
+              </div>
+            </div>
+          </div>
 
-							<p id="info">
-								bluemarket es una pagina creado para 
-								fassitacer la nececidad de productos tecnologicos que puedan ayudar   
-							</div>
-							</p> 
-						
-					</section>
-				</article>
-			</div>
-       	</ul>
-       </nav>
-    <script src="js/app.js"></script>
+          <!-- 2do Semestre -->
+          <div class="semestre-card">
+            <div class="semestre-header">
+              <h2>2do Semestre</h2>
+              <div class="semestre-badge">5 Materias</div>
+            </div>
+            <div class="materias-list">
+              <div class="materia-item">
+                <div class="materia-name">Bases de Datos</div>
+                <div class="profesor-name">Dr. Andrés Silva</div>
+              </div>
+              <div class="materia-item">
+                <div class="materia-name">IA Básica</div>
+                <div class="profesor-name">Msc. Esteban Ríos</div>
+              </div>
+              <div class="materia-item">
+                <div class="materia-name">Estadística Aplicada</div>
+                <div class="profesor-name">Dra. Teresa Jiménez</div>
+              </div>
+              <div class="materia-item">
+                <div class="materia-name">Redes I</div>
+                <div class="profesor-name">Dr. Pablo Méndez</div>
+              </div>
+              <div class="materia-item">
+                <div class="materia-name">Electrónica Digital</div>
+                <div class="profesor-name">Msc. Jaime López</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3er Semestre -->
+          <div class="semestre-card">
+            <div class="semestre-header">
+              <h2>3er Semestre</h2>
+              <div class="semestre-badge">5 Materias</div>
+            </div>
+            <div class="materias-list">
+              <div class="materia-item">
+                <div class="materia-name">Programación II</div>
+                <div class="profesor-name">Ing. David Vaca</div>
+              </div>
+              <div class="materia-item">
+                <div class="materia-name">Bases de Datos II</div>
+                <div class="profesor-name">Dr. Andrés Silva</div>
+              </div>
+              <div class="materia-item">
+                <div class="materia-name">Matemáticas II</div>
+                <div class="profesor-name">Dra. Carmen Aguilar</div>
+              </div>
+              <div class="materia-item">
+                <div class="materia-name">Física II</div>
+                <div class="profesor-name">Msc. Romina Andrade</div>
+              </div>
+              <div class="materia-item">
+                <div class="materia-name">Redes II</div>
+                <div class="profesor-name">Dr. Pablo Méndez</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4to Semestre -->
+          <div class="semestre-card">
+            <div class="semestre-header">
+              <h2>4to Semestre</h2>
+              <div class="semestre-badge">2 Materias</div>
+            </div>
+            <div class="materias-list">
+              <div class="materia-item">
+                <div class="materia-name">Contabilidad Especializada</div>
+                <div class="profesor-name">Msc. Viviana Torres</div>
+              </div>
+              <div class="materia-item">
+                <div class="materia-name">Ingeniería</div>
+                <div class="profesor-name">Msc. Esteban Ríos</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Información adicional -->
+        <div class="info-section">
+          <div class="info-card">
+            <h3>📊 Resumen de la Malla</h3>
+            <div class="stats-grid">
+              <div class="stat-item">
+                <div class="stat-number">4</div>
+                <div class="stat-label">Semestres</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">17</div>
+                <div class="stat-label">Materias Total</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">9</div>
+                <div class="stat-label">Profesores</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <script src="js/app.js"></script>
+      <script src="js/adminlink.js"></script>
       
           
 </body>

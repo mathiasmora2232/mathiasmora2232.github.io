@@ -1,0 +1,490 @@
+# PROYECTO DE ANÁLISIS Y DISEÑO DE RED
+## EMPRESA CHOCOLOCO
+
+### INFORMACIÓN DEL PROYECTO
+- **Estudiante:** Mathias Mora
+- **Fecha:** 16 de Julio, 2025
+- **Curso:** Comunicación y Redes
+- **Carrera:** Sistemas Informáticos
+
+---
+
+## 1. DESCRIPCIÓN DEL PROYECTO
+
+### 1.1 Objetivos del Proyecto
+El presente proyecto tiene como objetivo realizar un análisis completo de la infraestructura de red actual de la empresa Chocoloco y proponer un diseño optimizado que:
+
+- Mejore la conectividad entre las tres ubicaciones (Guayaquil, Manta y Quito)
+- Optimice el rendimiento de la red corporativa
+- Implemente medidas de seguridad adecuadas
+- Reduzca costos operativos
+- Mejore la productividad y comunicación
+
+### 1.2 Alcance
+El proyecto abarca:
+- **Corporativo Guayaquil:** 127 computadoras, 6 impresoras, 3 switches
+- **Planta Manta:** 50 computadoras, 5 máquinas de manufactura
+- **Planta Quito:** 80 computadoras, 5 máquinas de manufactura
+
+---
+
+## 2. ANÁLISIS DE LA SITUACIÓN ACTUAL
+
+### 2.1 Corporativo Guayaquil
+**Problemas Identificados:**
+- Red saturada con 127 equipos sin segmentación adecuada
+- Frecuentes interrupciones de conectividad
+- Falta de políticas de uso de red y equipos
+- Alto costo de conectividad ($1,500/mes)
+- Vulnerabilidades de seguridad (infección masiva reciente)
+- Uso inadecuado de recursos de impresión
+- Falta de restricciones de acceso a Internet
+- Equipo de sistemas sobrecargado
+
+**Infraestructura Actual:**
+- 3 Switches de 48 puertos interconectados
+- Enlace privado a Internet
+- Sistema PBX telefónico
+- Sin documentación de red ni direccionamiento IP
+
+### 2.2 Planta Manta
+**Problemas Identificados:**
+- Conectividad a Internet por línea telefónica (obsoleta)
+- Cableado inestable y lento
+- 50 computadoras en 2 niveles
+- 5 máquinas de manufactura conectadas a red
+
+### 2.3 Planta Quito
+**Problemas Identificados:**
+- Conectividad a Internet por línea telefónica (obsoleta)
+- Cableado inestable y lento
+- 80 computadoras en 3 pisos
+- 5 máquinas de manufactura conectadas a red
+
+### 2.4 Comunicación Inter-plantas
+**Problemas Identificados:**
+- Falta de comunicación segura entre plantas
+- Necesidad de transferir archivos confidenciales
+- Requerimientos para proyecto ISO/9000
+
+---
+
+## 3. DISEÑO DE RED PROPUESTO
+
+### 3.1 Topología General
+```
+                    INTERNET
+                        |
+                   [FIREWALL]
+                        |
+                [ROUTER PRINCIPAL]
+                        |
+                [SWITCH CORE L3]
+                   /    |    \
+              VLAN10  VLAN20  VLAN30
+              /         |         \
+         GUAYAQUIL    MANTA      QUITO
+```
+
+### 3.2 Arquitectura por Ubicación
+
+#### 3.2.1 Corporativo Guayaquil (Sede Principal)
+```
+INTERNET --- FIREWALL --- ROUTER PRINCIPAL
+                              |
+                         SWITCH CORE L3
+                              |
+        +----+----+----+----+----+----+
+        |    |    |    |    |    |    |
+    VLAN10 VLAN20 VLAN30 VLAN40 VLAN50 VLAN60
+     Admin  Ventas  Prod  Serv  Invit  Manuf
+```
+
+**VLANs Propuestas:**
+- **VLAN 10 - Administración:** RRHH, Finanzas, Gerencia
+- **VLAN 20 - Ventas:** Departamento comercial
+- **VLAN 30 - Producción:** Planificación y control
+- **VLAN 40 - Servidores:** Aplicaciones y datos
+- **VLAN 50 - Invitados:** Acceso limitado
+- **VLAN 60 - Manufactura:** Sistemas industriales
+
+#### 3.2.2 Planta Manta
+```
+VPN TUNNEL ---- ROUTER LOCAL
+                     |
+                SWITCH L2
+                /         \
+         VLAN 100      VLAN 110
+         Admin         Manufactura
+```
+
+#### 3.2.3 Planta Quito
+```
+VPN TUNNEL ---- ROUTER LOCAL
+                     |
+                SWITCH L2
+                /         \
+         VLAN 200      VLAN 210
+         Admin         Manufactura
+```
+
+---
+
+## 4. DIRECCIONAMIENTO IP PROPUESTO
+
+### 4.1 Esquema de Subnetting
+**Red Principal:** 192.168.0.0/16
+
+#### 4.1.1 Corporativo Guayaquil
+| VLAN | Propósito | Red | Máscara | Gateway | Rango Hosts |
+|------|-----------|-----|---------|---------|-------------|
+| 10 | Administración | 192.168.10.0/25 | 255.255.255.128 | 192.168.10.1 | 192.168.10.2-126 |
+| 20 | Ventas | 192.168.20.0/26 | 255.255.255.192 | 192.168.20.1 | 192.168.20.2-62 |
+| 30 | Producción | 192.168.30.0/26 | 255.255.255.192 | 192.168.30.1 | 192.168.30.2-62 |
+| 40 | Servidores | 192.168.40.0/28 | 255.255.255.240 | 192.168.40.1 | 192.168.40.2-14 |
+| 50 | Invitados | 192.168.50.0/26 | 255.255.255.192 | 192.168.50.1 | 192.168.50.2-62 |
+| 60 | Manufactura | 192.168.60.0/28 | 255.255.255.240 | 192.168.60.1 | 192.168.60.2-14 |
+
+#### 4.1.2 Planta Manta
+| VLAN | Propósito | Red | Máscara | Gateway | Rango Hosts |
+|------|-----------|-----|---------|---------|-------------|
+| 100 | Admin Manta | 192.168.100.0/26 | 255.255.255.192 | 192.168.100.1 | 192.168.100.2-62 |
+| 110 | Manufactura Manta | 192.168.110.0/28 | 255.255.255.240 | 192.168.110.1 | 192.168.110.2-14 |
+
+#### 4.1.3 Planta Quito
+| VLAN | Propósito | Red | Máscara | Gateway | Rango Hosts |
+|------|-----------|-----|---------|---------|-------------|
+| 200 | Admin Quito | 192.168.200.0/25 | 255.255.255.128 | 192.168.200.1 | 192.168.200.2-126 |
+| 210 | Manufactura Quito | 192.168.210.0/28 | 255.255.255.240 | 192.168.210.1 | 192.168.210.2-14 |
+
+### 4.2 Justificación del Direccionamiento
+- **Escalabilidad:** Permite crecimiento futuro
+- **Segmentación:** Aísla tráfico por departamentos
+- **Eficiencia:** Optimiza el uso de direcciones IP
+- **Gestión:** Facilita administración y troubleshooting
+
+---
+
+## 5. ESQUEMAS DE RED
+
+### 5.1 Mapa de Interconexión Nacional
+
+```
+        ECUADOR - RED CHOCOLOCO
+              
+    ┌─────────────────────────────┐
+    │         QUITO               │
+    │    ┌─────────────┐         │
+    │    │ Planta Quito│◄────────┼─── VPN Tunnel
+    │    │ 80 PCs      │         │
+    │    │ 5 Máquinas  │         │
+    │    └─────────────┘         │
+    └─────────────┬───────────────┘
+                  │
+                  │ VPN Site-to-Site
+                  │
+    ┌─────────────▼───────────────┐
+    │       GUAYAQUIL             │
+    │   ┌─────────────────┐       │
+    │   │   CORPORATIVO   │       │
+    │   │   127 PCs       │       │
+    │   │   6 Impresoras  │       │
+    │   │   DATACENTER    │       │
+    │   └─────────────────┘       │
+    └─────────────┬───────────────┘
+                  │
+                  │ VPN Tunnel
+                  │
+    ┌─────────────▼───────────────┐
+    │         MANTA               │
+    │    ┌─────────────┐         │
+    │    │ Planta Manta│         │
+    │    │ 50 PCs      │         │
+    │    │ 5 Máquinas  │         │
+    │    └─────────────┘         │
+    └─────────────────────────────┘
+```
+
+### 5.2 Esquema Corporativo Guayaquil
+
+```
+                    INTERNET
+                        │
+                   ┌────▼────┐
+                   │FIREWALL │
+                   │(ASA5506)│
+                   └────┬────┘
+                        │
+                   ┌────▼────┐
+                   │ ROUTER  │
+                   │(ISR4321)│
+                   └────┬────┘
+                        │
+                ┌───────▼────────┐
+                │  SWITCH CORE   │
+                │   (L3 Stack)   │
+                └─┬─┬─┬─┬─┬─┬───┘
+                  │ │ │ │ │ │
+            ┌─────┘ │ │ │ │ └─────┐
+            │       │ │ │ │       │
+      ┌─────▼─┐ ┌───▼─▼─▼─▼───┐ ┌─▼─────┐
+      │ADMIN  │ │   VENTAS    │ │SERVERS│
+      │VLAN10 │ │   VLAN20    │ │VLAN40 │
+      │30 PCs │ │   40 PCs    │ │5 Servs│
+      └───────┘ └─────────────┘ └───────┘
+```
+
+### 5.3 Esquema Planta Manta
+
+```
+    VPN TUNNEL FROM GUAYAQUIL
+                │
+           ┌────▼────┐
+           │ ROUTER  │
+           │(ISR4221)│
+           └────┬────┘
+                │
+        ┌───────▼────────┐
+        │  SWITCH L2     │
+        │  (Stack 2960)  │
+        └─┬─────────┬───┘
+          │         │
+    ┌─────▼─┐   ┌───▼─────┐
+    │ADMIN  │   │MANUFACT │
+    │VLAN100│   │VLAN110  │
+    │45 PCs │   │5 Máquins│
+    └───────┘   └─────────┘
+```
+
+### 5.4 Esquema Planta Quito
+
+```
+    VPN TUNNEL FROM GUAYAQUIL
+                │
+           ┌────▼────┐
+           │ ROUTER  │
+           │(ISR4221)│
+           └────┬────┘
+                │
+        ┌───────▼────────┐
+        │  SWITCH L2     │
+        │  (Stack 2960)  │
+        └─┬─────────┬───┘
+          │         │
+    ┌─────▼─┐   ┌───▼─────┐
+    │ADMIN  │   │MANUFACT │
+    │VLAN200│   │VLAN210  │
+    │75 PCs │   │5 Máquins│
+    └───────┘   └─────────┘
+```
+
+---
+
+## 6. RECOMENDACIONES TÉCNICAS
+
+### 6.1 Infraestructura de Red
+
+#### 6.1.1 Equipamiento Recomendado
+**Corporativo Guayaquil:**
+- **Firewall:** Cisco ASA 5506-X
+- **Router:** Cisco ISR 4321
+- **Switch Core:** Cisco Catalyst 9300 (Stack de 2)
+- **Switches Acceso:** Cisco Catalyst 2960-X
+- **Wireless:** Cisco Meraki MR36
+
+**Plantas Manta y Quito:**
+- **Router:** Cisco ISR 4221
+- **Switch:** Cisco Catalyst 2960-X (Stack)
+- **Wireless:** Cisco Meraki MR33
+
+#### 6.1.2 Conectividad WAN
+- **Guayaquil:** Enlace dedicado 100 Mbps
+- **Manta:** Enlace dedicado 50 Mbps
+- **Quito:** Enlace dedicado 80 Mbps
+- **VPN:** Site-to-Site IPSec tunnels
+
+### 6.2 Seguridad
+
+#### 6.2.1 Políticas de Seguridad
+- **Firewall Rules:** Implementar ACLs restrictivas
+- **Antivirus Corporativo:** Centralizado con updates automáticos
+- **Políticas de Usuario:** Restricción de instalación de software
+- **Backup:** Sistema automatizado diario
+- **Monitoreo:** SIEM para detección de amenazas
+
+#### 6.2.2 Control de Acceso
+- **NAC (Network Access Control):** Control de dispositivos
+- **RADIUS:** Autenticación centralizada
+- **Guest Network:** Red separada para visitantes
+- **Internet Filtering:** Control de contenido web
+
+### 6.3 Servidores y Aplicaciones
+
+#### 6.3.1 Infraestructura de Servidores
+- **Servidor de Dominio:** Windows Server 2022
+- **Servidor de Archivos:** Con replicación entre sitios
+- **Servidor de Aplicaciones:** Para sistema de producción
+- **Servidor de Backup:** Veeam Backup & Replication
+- **Servidor de Monitoreo:** PRTG Network Monitor
+
+#### 6.3.2 Virtualización
+- **Hypervisor:** VMware vSphere
+- **Storage:** SAN iSCSI para alta disponibilidad
+- **Clustering:** Para servicios críticos
+
+### 6.4 Telefonía
+
+#### 6.4.1 Sistema IP PBX
+- **PBX:** Cisco Call Manager Express
+- **Teléfonos IP:** Cisco 7841
+- **Integración:** Con sistema de CRM
+- **Call Center:** Para atención al cliente
+
+---
+
+## 7. ANÁLISIS DE COSTOS
+
+### 7.1 Inversión Inicial Estimada
+
+| Categoría | Descripción | Costo Estimado |
+|-----------|-------------|----------------|
+| **Hardware de Red** | Routers, Switches, Firewall | $35,000 |
+| **Servidores** | Hardware para virtualización | $25,000 |
+| **Licencias de Software** | SO, Antivirus, Aplicaciones | $15,000 |
+| **Cableado Estructurado** | Recableado en las 3 ubicaciones | $18,000 |
+| **Telefonía IP** | PBX y teléfonos | $12,000 |
+| **Implementación** | Consultoría e instalación | $20,000 |
+| **Capacitación** | Personal técnico | $5,000 |
+| **TOTAL** | | **$130,000** |
+
+### 7.2 Costos Operativos Mensuales
+
+| Concepto | Actual | Propuesto | Ahorro |
+|----------|--------|-----------|--------|
+| Internet Guayaquil | $1,500 | $800 | $700 |
+| Internet Plantas | $300 | $600 | -$300 |
+| Mantenimiento | $0 | $500 | -$500 |
+| Licencias | $200 | $800 | -$600 |
+| **TOTAL MENSUAL** | **$2,000** | **$2,700** | **-$700** |
+
+### 7.3 Retorno de Inversión (ROI)
+
+**Beneficios Tangibles Anuales:**
+- Reducción de tiempo de inactividad: $24,000
+- Optimización de recursos humanos: $36,000
+- Reducción de costos de comunicación: $8,400
+- **Total Beneficios:** $68,400
+
+**ROI = (Beneficios - Inversión) / Inversión × 100**
+**ROI = ($68,400 - $130,000) / $130,000 × 100 = -47.4%**
+
+*El ROI será positivo a partir del segundo año*
+
+---
+
+## 8. PLAN DE IMPLEMENTACIÓN
+
+### 8.1 Fases del Proyecto
+
+#### Fase 1: Preparación (Semanas 1-2)
+- Adquisición de equipos
+- Preparación de sitios
+- Capacitación inicial del personal
+
+#### Fase 2: Implementación Core (Semanas 3-6)
+- Instalación de equipos en Guayaquil
+- Configuración de VLANs y políticas
+- Migración gradual de usuarios
+
+#### Fase 3: Conexión de Plantas (Semanas 7-10)
+- Implementación en Manta y Quito
+- Configuración de VPN tunnels
+- Pruebas de conectividad
+
+#### Fase 4: Servicios Avanzados (Semanas 11-14)
+- Implementación de servidores
+- Configuración de telefonía IP
+- Sistemas de monitoreo
+
+#### Fase 5: Optimización (Semanas 15-16)
+- Fine-tuning de configuraciones
+- Documentación final
+- Capacitación avanzada
+
+### 8.2 Cronograma
+
+```
+Actividad               Sem1 Sem2 Sem3 Sem4 Sem5 Sem6 Sem7 Sem8 Sem9 Sem10 Sem11 Sem12 Sem13 Sem14 Sem15 Sem16
+Adquisición Equipos      ████ ████
+Prep. Infraestructura    ████ ████
+Config. Core Network           ████ ████ ████ ████
+Impl. Plantas                       ████ ████ ████ ████
+Servidores/Servicios                          ████  ████  ████  ████
+Optimización                                                    ████  ████
+```
+
+---
+
+## 9. MÉTRICAS DE ÉXITO
+
+### 9.1 KPIs Técnicos
+- **Uptime de Red:** >99.5%
+- **Tiempo de Respuesta:** <50ms intra-site
+- **Throughput:** >80% de capacidad nominal
+- **Incidentes de Seguridad:** <5 por mes
+
+### 9.2 KPIs de Negocio
+- **Productividad:** Aumento del 25%
+- **Tiempo de Resolución de Problemas:** Reducción del 60%
+- **Satisfacción del Cliente:** >90%
+- **Disponibilidad de Sistemas:** >99%
+
+---
+
+## 10. CONCLUSIONES
+
+### 10.1 Beneficios del Proyecto
+1. **Mejora en Conectividad:** Red estable y segura entre todas las ubicaciones
+2. **Optimización de Recursos:** Mejor aprovechamiento de ancho de banda e infraestructura
+3. **Seguridad Mejorada:** Protección contra amenazas y control de acceso
+4. **Escalabilidad:** Capacidad para crecimiento futuro
+5. **Reducción de Costos Operativos:** Optimización de recursos y procesos
+
+### 10.2 Riesgos y Mitigaciones
+1. **Interrupción del Negocio:** Mitigado con implementación gradual
+2. **Resistencia al Cambio:** Mitigado con capacitación adecuada
+3. **Fallas de Equipos:** Mitigado con redundancia y garantías
+4. **Sobrecostos:** Mitigado con planificación detallada
+
+### 10.3 Recomendación Final
+La implementación de este diseño de red es altamente recomendable para Chocoloco, ya que:
+
+- Resuelve los problemas actuales de conectividad y seguridad
+- Mejora significativamente la productividad organizacional
+- Proporciona una base sólida para el crecimiento futuro
+- Cumple con los requerimientos del proyecto ISO/9000
+- Ofrece un ROI positivo a mediano plazo
+
+El proyecto debe ejecutarse con prioridad alta para evitar mayores pérdidas por la infraestructura actual deficiente.
+
+---
+
+## ANEXOS
+
+### Anexo A: Diagrama de Red Detallado
+*[Aquí se incluirían diagramas técnicos detallados]*
+
+### Anexo B: Configuraciones de Ejemplo
+*[Aquí se incluirían ejemplos de configuración de equipos]*
+
+### Anexo C: Matriz de VLANs
+*[Aquí se incluiría la matriz detallada de VLANs y permisos]*
+
+### Anexo D: Plan de Direccionamiento Completo
+*[Aquí se incluiría el plan completo de direccionamiento IP]*
+
+---
+
+**Documento elaborado por:** Mathias Mora  
+**Fecha:** 16 de Julio, 2025  
+**Revisión:** 1.0
