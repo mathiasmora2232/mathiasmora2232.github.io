@@ -1,10 +1,38 @@
 [
   {
-    "email": "usuario1@ejemplo.com",
-    "password": "REDACTED_LOCAL_SECRET"
+    "email": "estudiante1@ejemplo.com",
+    "username": "estudiante1",
+    "password": "REDACTED_LOCAL_SECRET",
+    "rol": "estudiante"
   },
   {
-    "email": "usuario2@ejemplo.com",
-    "password": "REDACTED_LOCAL_SECRET"
+   "email":"estudiante3@ejemplo.com",
+   "username": "mora",
+   "password": "REDACTED_LOCAL_SECRET",
+   "rol": "estudiante"
+  },
+  {
+    "email": "estudiante2@ejemplo.com",
+    "username": "estudiante2",
+    "password": "REDACTED_LOCAL_SECRET",
+    "rol": "estudiante"
+  },
+  {
+    "email": "profe1@ejemplo.com",
+    "username": "profejuan",
+    "password": "REDACTED_LOCAL_SECRET",
+    "rol": "profe"
+  },
+  {
+    "email": "profe2@ejemplo.com",
+    "username": "profemaria",
+    "password": "REDACTED_LOCAL_SECRET",
+    "rol": "profe"
+  },
+  {
+    "email": "admin@ejemplo.com",
+    "username": "admin",
+    "password": "REDACTED_LOCAL_SECRET",
+    "rol": "admin"
   }
 ]

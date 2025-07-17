@@ -1,0 +1,150 @@
+body{
+  background-image: url('../img/img3.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  min-height: 100vh;
+  height: 100vh;
+  overflow-y: hidden;
+  margin: 0;
+  padding: 0;
+  font-family: "Castoro", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.main-box {
+  margin: 130px auto 0 auto;
+  width: 500px;
+  min-height: 360px;
+  background: linear-gradient(135deg, #f6f7f8f2 30%, #fffffff2 100%);
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding:  0px 0px 0px;
+}
+.page-title, .form-for-login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.page-title {
+  padding: 10px;
+  margin-top: 0;
+  background: transparent;
+  margin-left: 0;
+  margin-right: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.form-for-login {
+  margin-top: 0;
+  background: transparent;
+  width: 100%;
+  height: auto;
+  border-radius: 0;
+  box-shadow: none;
+  padding-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: none;
+}
+.page-title .main-title{
+    padding-top: 10px;
+    text-align: center;
+    font-family: "Castoro", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 3vw;
+  }
+.form-for-login .field-note{
+  margin-left: 0;
+  background: transparent;
+  border-radius: 0;
+  padding: 4px 8px;
+  font-family: "Castoro", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.form-for-login .filed-note span{
+    font-family: "Castoro", serif;
+    font-weight: 400;
+    font-style: normal;
+    text-decoration: rgb(0, 0, 0);
+  }
+.form-for-login label{
+  font-size: 22px;
+  margin-left: 0;
+  background: transparent;
+  border-radius: 0;
+  padding: 2px 8px;
+  font-family: "Castoro", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.form-for-login .email input{
+  font-size: 16px;
+  width: 330px;
+  margin-left:  0;
+  border-radius: 6px;
+  border: 2px solid #000;
+  height: 26px;
+  cursor: text;
+  background: rgba(255,255,255,0.18);
+  color: #000;
+  box-shadow: none;
+  padding-left: 10px;
+  font-family: "Castoro", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+  .form-for-login .email input:hover,
+  .form-for-login .email input:focus {
+  outline: 2px solid #4a90e2;
+  background: rgba(255,255,255,0.22);
+}
+  .form-for-login .password-remainder{
+    margin-left: 0;
+    text-decoration: none;
+    color: #000;
+    font-family: "Castoro", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  .form-for-login .password-remainder:hover{
+    color: rgba(8, 9, 7, 0.85);
+    text-decoration: underline;
+  }
+  .form-for-login  .button-login{
+    margin-left: 0;
+  }
+  .form-for-login  .button-login a{
+    text-decoration: none;
+    color: #000;
+    border-color: #000;
+    font-family: "Castoro", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+.form-for-login .button-login-2{
+  font-size: 30px;
+  width: 230px;
+  border: none;
+  border-radius: 8px;
+  box-shadow: none;
+  color: #263228;
+  font-weight: bold;
+  transition: background 0.2s, color 0.2s;
+  font-family: "Castoro", serif;
+  font-style: normal;
+}
+.form-for-login .button-login-2:hover {
+  cursor: pointer;
+}

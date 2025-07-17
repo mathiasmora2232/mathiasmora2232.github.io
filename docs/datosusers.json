@@ -1,0 +1,41 @@
+{
+  "estudiante1_estudiante1@ejemplo.com": {
+    "nombre": "adadsqda",
+    "pasaporte": "eooooooooooooooooooo",
+    "fecha_nacimiento": "",
+    "sexo": "",
+    "estado_civil": "",
+    "tipo_sangre": "",
+    "provincia_nacimiento": "",
+    "canton": "",
+    "ciudad": "",
+    "correo": "",
+    "correo_institucional": ""
+  },
+  "estudiante2_estudiante2@ejemplo.com": {
+    "nombre": "Juan Manuel Olmos",
+    "pasaporte": "a23231",
+    "fecha_nacimiento": "2000-01-14",
+    "sexo": "Masculino",
+    "estado_civil": "Casado/a",
+    "tipo_sangre": "A+",
+    "provincia_nacimiento": "Azul",
+    "canton": "Pichincha ",
+    "ciudad": "Quito",
+    "correo": "dadasdad@gmail.com",
+    "correo_institucional": ""
+  },
+  "mora_estudiante3@ejemplo.com": {
+    "nombre": "Mathias Mora",
+    "pasaporte": "a12131",
+    "fecha_nacimiento": "2006-11-30",
+    "sexo": "Masculino",
+    "estado_civil": "Soltero/a",
+    "tipo_sangre": "O-",
+    "provincia_nacimiento": "Guayaquil",
+    "canton": "Guayas",
+    "ciudad": "Guayaquil",
+    "correo": "mora30@gmail.com",
+    "correo_institucional": "estudiante3@ejemplo.com"
+  }
+}

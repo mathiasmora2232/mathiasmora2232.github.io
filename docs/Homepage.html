@@ -4,30 +4,32 @@
 <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Education</title>
-    <link rel="icon" href="imagenes/bluemarket.ico">
+    <title>EduConnect</title>
+    <link rel="icon" href="img/logojpg-removebg-preview.ico">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Castoro:ital@0;1&display=swap" rel="stylesheet">    
     <link rel="stylesheet" href="css/Global.css">
     <link rel="stylesheet" href="css/homepage.css">
     
 </head>
 <body>
+    
     <header>
    <nav>
-  <div class="logo">Education</div>
+  <div class="logo">EduConnect</div>
 
   <ul class="nav-links">
-    <li><a href="Homepage.html">Pagina de Inicio</a></li>
+    <li><a href="Homepage.html">Página de Inicio</a></li>
     <li><a href="Materias.html">Materias</a></li>
     <li><a href="Malla.html">Malla</a></li>
     <li><a href="Calendario.html">Calendario</a></li>
     <li><a href="cuenta.html">Mi cuenta</a></li>
+    <li id="admin-link" style="display:none;"><a href="admin/dashboard-admin.html">Panel Admin</a></li>
   </ul>
-
-  <!-- Botón de notificaciones separado -->
   <div class="notifications" id="notificationsBtn">
     <span class="bell">🔔</span>
   </div>
@@ -93,30 +95,189 @@
     </header>
 
     <main class="dashboard">
-        <section class="welcome">
-            <h1>Bienvenido a tu plataforma educativa</h1>
-            <p>Consulta tus materias, tareas, notas y mensajes de tus profesores desde aquí.</p>
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">¡Hola! Bienvenido a EduConnect 🎓</h1>
+                    <p class="hero-subtitle">Tu plataforma educativa inteligente donde el aprendizaje cobra vida</p>
+                </div>
+            </div>
         </section>
 
-        <section class="panel">
-            <div class="card">
-                <h2>Progreso Académico</h2>
-                <p>Tu promedio actual es Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores, tenetur praesentium dicta ea deleniti quasi dolor veritatis fuga nulla! Maiores illo molestias assumenda quis modi consequatur aspernatur, dolores laboriosam voluptate! de 87%. ¡Sigue así!</p>
+        <!-- Dashboard Cards -->
+        <section class="dashboard-cards">
+            <div class="card card-progress enhanced">
+                <div class="card-header">
+                    <h2>📈 Progreso Académico</h2>
+                    <div class="trend-indicator positive">↗️ +5%</div>
+                </div>
+                <div class="progress-details">
+                    <p>Tu promedio actual es de <strong>87%</strong></p>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar-bg">
+                            <div class="progress-bar-fill animated" data-width="87"></div>
+                        </div>
+                        <span class="progress-text">87%</span>
+                    </div>
+                    <div class="progress-breakdown">
+                        <div class="subject-progress">
+                            <span>Matemáticas</span>
+                            <div class="mini-progress">
+                                <div class="mini-fill" style="width: 85%"></div>
+                            </div>
+                            <span>85%</span>
+                        </div>
+                        <div class="subject-progress">
+                            <span>Ciencias</span>
+                            <div class="mini-progress">
+                                <div class="mini-fill" style="width: 91%"></div>
+                            </div>
+                            <span>91%</span>
+                        </div>
+                        <div class="subject-progress">
+                            <span>Historia</span>
+                            <div class="mini-progress">
+                                <div class="mini-fill" style="width: 82%"></div>
+                            </div>
+                            <span>82%</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="card">
-                <h2>Tareas Pendientes</h2>
-                <ul>
-                    <li>Ensayo de Literatura - 28 junio</li>
-                    <li>Problemas de Física - 30 junio</li>
-                </ul>
+
+            <div class="card card-tasks enhanced" id="tareas">
+                <div class="card-header">
+                    <h2>📝 Tareas Pendientes</h2>
+                    <div class="badge urgent">3 urgentes</div>
+                </div>
+                <div class="tasks-list">
+                    <div class="task-item high">
+                        <div class="task-subject">Matemáticas</div>
+                        <div class="task-title">Ecuaciones cuadráticas</div>
+                        <div class="task-due">Vence: 19/07</div>
+                        <div class="task-priority high">Alta</div>
+                    </div>
+                    <div class="task-item medium">
+                        <div class="task-subject">Literatura</div>
+                        <div class="task-title">Ensayo sobre "Cien años de soledad"</div>
+                        <div class="task-due">Vence: 22/07</div>
+                        <div class="task-priority medium">Media</div>
+                    </div>
+                    <div class="task-item low">
+                        <div class="task-subject">Historia</div>
+                        <div class="task-title">Investigación Imperio Romano</div>
+                        <div class="task-due">Vence: 28/07</div>
+                        <div class="task-priority low">Baja</div>
+                    </div>
+                </div>
             </div>
-            <div class="card">
-                <h2>Mensajes</h2>
-                <p>“Revisa el proyecto grupal.” - Profesora Andrea</p>
+
+            <div class="card card-messages enhanced">
+                <div class="card-header">
+                    <h2>💬 Mensajes Recientes</h2>
+                    <div class="notification-dot">2</div>
+                </div>
+                <div class="messages-list">
+                    <div class="message-item unread">
+                        <div class="message-avatar">👩‍🏫</div>
+                        <div class="message-content">
+                            <div class="message-sender">Prof. María López</div>
+                            <div class="message-text">Recordatorio: Laboratorio de células mañana</div>
+                            <div class="message-time">Hace 2 horas</div>
+                        </div>
+                        <div class="message-status unread"></div>
+                    </div>
+                    <div class="message-item unread">
+                        <div class="message-avatar">👨‍🏫</div>
+                        <div class="message-content">
+                            <div class="message-sender">Prof. Carlos Mendez</div>
+                            <div class="message-text">Excelente trabajo en el último ensayo</div>
+                            <div class="message-time">Hace 5 horas</div>
+                        </div>
+                        <div class="message-status unread"></div>
+                    </div>
+                    <div class="message-item">
+                        <div class="message-avatar">👩‍🏫</div>
+                        <div class="message-content">
+                            <div class="message-sender">Prof. Ana García</div>
+                            <div class="message-text">Materiales del próximo tema disponibles</div>
+                            <div class="message-time">Ayer</div>
+                        </div>
+                        <div class="message-status read"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card card-schedule enhanced">
+                <div class="card-header">
+                    <h2>🕐 Horario de Hoy</h2>
+                    <div class="current-time" id="currentTime"></div>
+                </div>
+                <div class="schedule-timeline">
+                    <div class="timeline-item completed">
+                        <div class="timeline-time">8:00 AM</div>
+                        <div class="timeline-content">
+                            <div class="timeline-subject">Matemáticas</div>
+                            <div class="timeline-location">Aula 201</div>
+                        </div>
+                        <div class="timeline-status completed">✓</div>
+                    </div>
+                    <div class="timeline-item current">
+                        <div class="timeline-time">10:00 AM</div>
+                        <div class="timeline-content">
+                            <div class="timeline-subject">Historia</div>
+                            <div class="timeline-location">Aula 105</div>
+                        </div>
+                        <div class="timeline-status current">⏳</div>
+                    </div>
+                    <div class="timeline-item upcoming">
+                        <div class="timeline-time">2:00 PM</div>
+                        <div class="timeline-content">
+                            <div class="timeline-subject">Ciencias</div>
+                            <div class="timeline-location">Laboratorio</div>
+                        </div>
+                        <div class="timeline-status upcoming">⏰</div>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
 
     <script src="js/app.js"></script>
+    <script src="js/adminlink.js"></script>
+    <script>
+        // Animación del progreso
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animar barras de progreso
+            const progressBars = document.querySelectorAll('.progress-bar-fill.animated');
+            progressBars.forEach(bar => {
+                const width = bar.getAttribute('data-width');
+                setTimeout(() => {
+                    bar.style.width = width + '%';
+                }, 500);
+            });
+            // Marcar mensajes como leídos
+            const messageItems = document.querySelectorAll('.message-item');
+            messageItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    this.classList.remove('unread');
+                    const status = this.querySelector('.message-status');
+                    status.classList.remove('unread');
+                    status.classList.add('read');
+                    
+                    // Actualizar contador de notificaciones
+                    const notificationDot = document.querySelector('.notification-dot');
+                    const currentCount = parseInt(notificationDot.textContent);
+                    if (currentCount > 0) {
+                        notificationDot.textContent = currentCount - 1;
+                        if (currentCount - 1 === 0) {
+                            notificationDot.style.display = 'none';
+                        }
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>

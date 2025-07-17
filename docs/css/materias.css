@@ -1,5 +1,239 @@
-.materias{
-    background-color: rgb(255, 255, 0);
-   display: inline-block;
-    margin:  100px;
+/* Estilos para la página de materias */
+.materias {
+  padding-top: 120px;
+  min-height: 100vh;
+  font-family: "Castoro", serif;
+}
+
+.materias-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.materias-container h2 {
+  text-align: center;
+  color:#357abd;
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.materias-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+  padding: 20px 0;
+}
+
+.materia-card {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  position: relative;
+}
+
+.materia-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.materia-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  padding: 0;
+}
+
+.materia-header {
+  background: linear-gradient(135deg, #4a90e2, #357abd);
+  padding: 25px;
+  text-align: center;
+  color: white;
+  position: relative;
+}
+
+.materia-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 20"><defs><pattern id="waves" x="0" y="0" width="100" height="20" patternUnits="userSpaceOnUse"><path d="M0 10 Q25 0 50 10 T100 10 v10 H0z" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="20" fill="url(%23waves)"/></svg>') repeat-x;
+  opacity: 0.3;
+}
+
+.materia-icon {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.materia-header h3 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.materia-info {
+  padding: 25px;
+  background: white;
+}
+
+.profesor {
+  font-size: 1.1rem;
+  color: #4a90e2;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.horario {
+  color: #666;
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background-color: #e0e0e0;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.progress {
+  height: 100%;
+  background: linear-gradient(90deg, #4a90e2, #357abd);
+  border-radius: 4px;
+  transition: width 0.3s ease;
+  position: relative;
+}
+
+.progress::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.progress-text {
+  font-size: 0.9rem;
+  color: #888;
+  font-weight: 500;
+}
+
+/* Efectos adicionales para la interactividad */
+.materia-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.6s;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.materia-card:hover::before {
+  transform: translateX(100%);
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .materias-container {
+    padding: 20px 15px;
+  }
+  
+  .materias-container h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+  
+  .materias-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .materia-card {
+    margin: 0 10px;
+  }
+  
+  .materia-header {
+    padding: 20px;
+  }
+  
+  .materia-icon {
+    font-size: 2.5rem;
+  }
+  
+  .materia-header h3 {
+    font-size: 1.5rem;
+  }
+  
+  .materia-info {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .materias {
+    padding-top: 100px;
+  }
+  
+  .materias-container h2 {
+    font-size: 1.8rem;
+  }
+  
+  .materia-header h3 {
+    font-size: 1.3rem;
+  }
+  
+  .profesor {
+    font-size: 1rem;
+  }
+  
+  .horario {
+    font-size: 0.9rem;
+  }
+}
+
+/* Animación de entrada */
+.materia-card {
+  animation: fadeInUp 0.6s ease forwards;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.materia-card:nth-child(1) { animation-delay: 0.1s; }
+.materia-card:nth-child(2) { animation-delay: 0.2s; }
+.materia-card:nth-child(3) { animation-delay: 0.3s; }
+.materia-card:nth-child(4) { animation-delay: 0.4s; }
+.materia-card:nth-child(5) { animation-delay: 0.5s; }
+.materia-card:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

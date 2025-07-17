@@ -1,0 +1,112 @@
+
+.container {
+    max-width: 800px;
+    margin: 60px auto 0 auto;
+    background: #f7f7f7;
+    border-radius: 16px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+    padding: 32px 48px 32px 48px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 16px auto;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: #eaeadd;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.07);
+}
+
+.profile img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    display: block;
+    margin: 0;
+    object-fit: cover;
+    background: #fff;
+}
+
+.account-info {
+    width: 100%;
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.account-info h2 {
+    margin-bottom: 8px;
+    font-size: 1.5em;
+    color: #333;
+}
+.account-info p {
+    margin-bottom: 18px;
+    font-size: 1.1em;
+    color: #555;
+}
+.form-group {
+    margin-bottom: 14px;
+    width: 100%;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 4px;
+    color: #333;
+    font-size: 1em;
+}
+.form-group input, .form-group select {
+    width: 157%;
+    min-width: 320px;
+    max-width: 500px;
+    padding: 8px 10px;
+    border: 1.5px solid #bbb;
+    border-radius: 8px;
+    font-size: 1.1em;
+    background: #fff;
+    box-sizing: border-box;
+    margin-bottom: 2px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.logout-btn {
+    width: 84%;
+    padding: 12px;
+    background: #e74c3c;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1em;
+    cursor: pointer;
+    margin-top: 18px;
+    transition: background 0.2s;
+}
+.logout-btn:hover {
+    background: #c0392b;
+}
+.save-btn {
+    width: 157%;
+    padding: 10px;
+    background: #448ed3;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: 8px;
+}
+.save-btn:hover {
+    background: #2c6bb2;
+}

@@ -4,28 +4,31 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Calendario | Education</title>
-  <link rel="icon" href="imagenes/bluemarket.ico">
+  <title>Calendario | EduConnect</title>
+  <link rel="icon" href="img/logojpg-removebg-preview.ico">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/Global.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Castoro:ital@0;1&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="css/calendario.css">
 </head>
 <body>
   <div id="main-container">
     <header>
-      <!-- Nav bar ya incluido correctamente -->
       <nav>
-        <div class="logo">Education</div>
+        <div class="logo">EduConnect</div>
         <ul class="nav-links">
-          <li><a href="Homepage.html">Pagina de Inicio</a></li>
-          <li><a href="sobrenosotros.html">Materias</a></li>
+          <li><a href="Homepage.html">Página de Inicio</a></li>
+          <li><a href="Materias.html">Materias</a></li>
           <li><a href="Malla.html">Malla</a></li>
           <li><a href="Calendario.html">Calendario</a></li>
           <li><a href="cuenta.html">Mi cuenta</a></li>
+          <li id="admin-link" style="display:none;"><a href="admin/dashboard-admin.html">Panel Admin</a></li>
         </ul>
-  <!-- Botón de notificaciones separado -->
+  <!-- Botón de notificaciones-->
   <div class="notifications" id="notificationsBtn">
     <span class="bell">🔔</span>
   </div>
@@ -109,6 +112,7 @@
     </main>
 
     <script src="js/app.js"></script>
+    <script src="js/adminlink.js"></script>
   </div>
 </body>
 </html>
