@@ -1,0 +1,218 @@
+{
+  "bio": {
+    "eyebrow": "Bio personal / bitacora viva",
+    "name": "Mathias Mora",
+    "role": "Software Developer",
+    "location": "Ecuador",
+    "headline": "Soy Mathias: construyo sistemas pequenos, pruebo ideas rapido y convierto caos en producto.",
+    "lead": "Me gusta moverme entre codigo, producto y operacion: entender un problema, armar una primera version, conectarla con datos reales y dejarla lo bastante clara para seguir creciendo. Este sitio no es solo una lista de repos; es mi forma de contar que estoy aprendiendo, construyendo y ordenando mi camino como desarrollador.",
+    "photo": {
+      "src": "https://github.com/mathiasmora2232.png",
+      "alt": "Foto de perfil de Mathias Mora",
+      "source": "Avatar publico de GitHub. Para usar una foto propia, guarda la imagen como docs/assets/profile.jpg y cambia esta ruta a ./assets/profile.jpg."
+    },
+    "facts": [
+      "Pienso en productos: problema, usuario, flujo, datos y siguiente version.",
+      "Me siento comodo mezclando frontend, backend, automatizacion y documentacion.",
+      "Uso este portfolio como diario tecnico para no perder lo que voy aprendiendo."
+    ],
+    "cards": [
+      {
+        "kicker": "Como trabajo",
+        "title": "Primero entiendo el flujo",
+        "body": "Antes de llenar una pantalla de botones intento responder: quien lo usa, que le duele, que dato entra, que resultado espera y que parte se puede automatizar."
+      },
+      {
+        "kicker": "Que construyo",
+        "title": "Herramientas utiles, no vitrinas vacias",
+        "body": "Me interesan sistemas de gestion, dashboards, utilidades, automatizaciones, experiencias web y productos que puedan empezar simples pero crecer con orden."
+      },
+      {
+        "kicker": "Mi manera de aprender",
+        "title": "Construir, romper, documentar",
+        "body": "Aprendo levantando prototipos, viendo que falla, corrigiendo estructura y dejando notas para que el siguiente paso sea mas facil que el anterior."
+      }
+    ]
+  },
+  "now": [
+    {
+      "title": "Dando forma a mi perfil publico",
+      "detail": "Estoy convirtiendo este GitHub Pages en una bio viva: mas personal, mas clara y facil de actualizar."
+    },
+    {
+      "title": "Ordenando lo que construyo",
+      "detail": "Estoy separando ideas, productos, practicas y repos para que cada cosa tenga contexto y no parezca solo una lista."
+    },
+    {
+      "title": "Conectando stack con proposito",
+      "detail": "Frontend, backend, datos y documentacion aparecen como herramientas para resolver flujos, no como etiquetas sueltas."
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2026-10",
+      "title": "StellarCode Studio lanzado al mercado",
+      "body": "StellarCode pasa a tener presencia publica real en stellarcodelabs.lat y se vuelve una prioridad fuerte dentro del perfil profesional de Mathias.",
+      "tags": ["StellarCode", "mercado", "sitio publico"]
+    },
+    {
+      "date": "2026-10",
+      "title": "DevFlow aparece como proyecto publico",
+      "body": "Repositorio publico creado y actualizado en octubre de 2026. El portfolio lo trata como proyecto en desarrollo y enlaza a la evidencia disponible.",
+      "tags": ["Python", "repo publico", "en desarrollo"]
+    },
+    {
+      "date": "2026",
+      "title": "Exploracion de herramientas y productos pequenos",
+      "body": "Repositorios publicos como apppdf, futboldemo, tictacto y PaginaWebmusic muestran practica con interfaces, utilidades y prototipos web.",
+      "tags": ["HTML", "JavaScript", "prototipos"]
+    },
+    {
+      "date": "2025-2026",
+      "title": "Web universitaria estatica",
+      "body": "El sitio original de GitHub Pages se uso para una experiencia academica con paginas como Homepage, Login, Malla, Materias y Calendario. Ahora queda archivado.",
+      "tags": ["GitHub Pages", "HTML", "CSS", "archivo"]
+    },
+    {
+      "date": "2021-2026",
+      "title": "Perfil y presencia publica en GitHub",
+      "body": "El perfil publico mantiene repos propios y forks de aprendizaje. Esta pagina organiza esa actividad como una narrativa mas clara.",
+      "tags": ["GitHub", "aprendizaje continuo"]
+    }
+  ],
+  "projects": [
+    {
+      "name": "DevFlow",
+      "kind": "Herramienta de flujo",
+      "status": "Herramienta personal en construccion",
+      "summary": "DevFlow es una herramienta para ordenar trabajo tecnico: pensar tareas, documentar avances y convertir procesos repetidos en un flujo mas claro.",
+      "stack": ["Python", "automatizacion", "workflow"],
+      "repo": "https://github.com/mathiasmora2232/DevFlow",
+      "story": "./project.html?project=devflow",
+      "featured": true
+    },
+    {
+      "name": "SmartAhorra",
+      "kind": "Producto financiero en produccion",
+      "status": "Version existente",
+      "summary": "SmartAhorra es un producto para ayudar a ordenar decisiones de ahorro: entender dinero disponible, metas y habitos para tomar mejores acciones.",
+      "stack": ["producto", "finanzas", "UX", "datos"],
+      "repo": "",
+      "story": "./project.html?project=smartahorra",
+      "liveUrl": "",
+      "featured": true
+    },
+    {
+      "name": "StellarCode Studio",
+      "kind": "Marca lanzada al mercado",
+      "status": "Sitio publico activo",
+      "summary": "StellarCode Studio es la marca desde la que estoy empujando software real al mercado: servicios, productos, presencia publica y una forma propia de construir.",
+      "stack": ["software", "mercado", "servicios", "productos"],
+      "repo": "",
+      "story": "./project.html?project=stellarcode-studio",
+      "liveUrl": "https://stellarcodelabs.lat",
+      "featured": true
+    },
+    {
+      "name": "Steatify",
+      "kind": "Producto por documentar",
+      "status": "Sin repositorio publico verificado en esta revision",
+      "summary": "Espacio listo para explicar proposito, estado, stack y aprendizajes sin afirmar logros todavia no verificados.",
+      "stack": ["producto", "pendiente"],
+      "repo": "",
+      "story": "./project.html?project=steatify",
+      "featured": true
+    },
+    {
+      "name": "PaginaWebmusic",
+      "kind": "Proyecto web",
+      "status": "Repositorio publico",
+      "summary": "Practica de pagina web en HTML. Sirve como evidencia de exploracion frontend y puede evolucionar a una nota tecnica.",
+      "stack": ["HTML", "frontend"],
+      "repo": "https://github.com/mathiasmora2232/PaginaWebmusic",
+      "story": "",
+      "featured": false
+    },
+    {
+      "name": "tictacto",
+      "kind": "Juego / practica",
+      "status": "Repositorio publico",
+      "summary": "Proyecto JavaScript para practica de interaccion y logica sencilla.",
+      "stack": ["JavaScript", "UI"],
+      "repo": "https://github.com/mathiasmora2232/tictacto",
+      "story": "",
+      "featured": false
+    },
+    {
+      "name": "apppdf",
+      "kind": "Utilidad",
+      "status": "Repositorio publico",
+      "summary": "Proyecto HTML relacionado con PDF. Pendiente de ampliar con objetivo, flujo y capturas.",
+      "stack": ["HTML", "PDF"],
+      "repo": "https://github.com/mathiasmora2232/apppdf",
+      "story": "",
+      "featured": false
+    },
+    {
+      "name": "Asistencias",
+      "kind": "Sistema aplicado",
+      "status": "Repositorio publico",
+      "summary": "Repositorio PHP que puede documentarse como experiencia con sistemas de gestion o registro.",
+      "stack": ["PHP", "gestion"],
+      "repo": "https://github.com/mathiasmora2232/Asistencias",
+      "story": "",
+      "featured": false
+    }
+  ],
+  "experience": [
+    {
+      "period": "Actual",
+      "title": "Perfil vivo y marca tecnica personal",
+      "body": "Estoy transformando una web academica antigua en un espacio que explique quien soy, que hago, como trabajo y como evolucionan mis proyectos.",
+      "tags": ["GitHub Pages", "HTML", "CSS", "JavaScript"]
+    },
+    {
+      "period": "2026",
+      "title": "Prototipos, herramientas y sistemas pequenos",
+      "body": "He explorado proyectos web, utilidades, juegos simples, sistemas de asistencia y automatizacion. Lo importante no es solo el repo: es practicar el ciclo de idea, interfaz, logica, datos y mejora.",
+      "tags": ["Python", "JavaScript", "PHP", "Java"]
+    },
+    {
+      "period": "2025-2026",
+      "title": "Web universitaria archivada",
+      "body": "Experiencia de paginas estaticas con navegacion, login simulado, calendario, materias y contenido academico.",
+      "tags": ["HTML", "CSS", "JS"]
+    }
+  ],
+  "stack": [
+    {
+      "title": "Frontend",
+      "body": "Lo uso para convertir ideas en pantallas claras: estructura semantica, responsive, pequenos estados interactivos y experiencias que se entiendan rapido.",
+      "items": ["HTML semantico", "CSS responsive", "JavaScript sin framework", "GitHub Pages"]
+    },
+    {
+      "title": "Backend / scripting",
+      "body": "Me sirve para automatizar tareas, ordenar reglas, procesar datos y conectar formularios o flujos con una logica mas estable.",
+      "items": ["Python", "PHP", "Java", "C# en exploracion"]
+    },
+    {
+      "title": "Producto, datos y operacion",
+      "body": "Me interesa mirar mas alla del codigo: documentar decisiones, pensar en usuarios, registrar avances y dejar sistemas faciles de explicar.",
+      "items": ["Documentacion incremental", "Repos como evidencia", "Timeline de hitos", "Historias tecnicas"]
+    }
+  ],
+  "notes": [
+    {
+      "date": "2026-10-05",
+      "title": "Convertir el sitio en bitacora viva",
+      "summary": "Primera nota: por que el portfolio debe ser un archivo expandible y no un CV congelado.",
+      "file": "./content/posts/convertir-sitio-en-bitacora.md"
+    },
+    {
+      "date": "2026-10-05",
+      "title": "Como agregar un nuevo hito",
+      "summary": "Guia corta para sumar timeline, proyecto o nota sin tocar estilos ni estructura.",
+      "file": "./content/posts/como-agregar-hitos.md"
+    }
+  ]
+}

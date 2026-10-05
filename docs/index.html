@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Portfolio vivo de Mathias Mora: bio, proyectos, timeline, stack y notas de construccion de productos."
+    />
+    <meta name="theme-color" content="#111827" />
+    <title>Mathias Mora | Bitacora de construccion</title>
+    <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./assets/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+    <header class="site-header" data-header>
+      <a class="brand" href="#inicio" aria-label="Ir al inicio">
+        <span class="brand-mark">MM</span>
+        <span>
+          <strong>Mathias Mora</strong>
+          <small>software + productos</small>
+        </span>
+      </a>
+      <button class="menu-button" type="button" data-menu-toggle aria-expanded="false" aria-controls="site-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span class="sr-only">Abrir menu</span>
+      </button>
+      <nav id="site-nav" class="site-nav" data-nav>
+        <a href="#timeline">Timeline</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#experiencia">Experiencia</a>
+        <a href="#stack">Stack</a>
+        <a href="#notas">Notas</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </header>
+
+    <main id="contenido">
+      <section id="inicio" class="hero section">
+        <div class="hero-copy">
+          <p class="eyebrow" data-bio-eyebrow>Bio / archivo vivo</p>
+          <div class="bio-mobile-photo" data-bio-mobile-photo></div>
+          <h1 data-bio-headline>Hola, soy Mathias. Construyo software y voy documentando el camino.</h1>
+          <p class="hero-lead" data-bio-lead>
+            Este sitio es mi bio viva: una mezcla de historia personal, proyectos, aprendizajes, repos y notas.
+          </p>
+          <dl class="bio-facts" data-bio-meta aria-label="Datos rapidos de Mathias"></dl>
+          <div class="hero-actions">
+            <a class="button primary" href="#proyectos">Ver proyectos</a>
+            <a class="button ghost" href="https://github.com/mathiasmora2232" target="_blank" rel="noreferrer">GitHub</a>
+          </div>
+        </div>
+        <aside class="bio-panel" aria-labelledby="bio-title">
+          <figure class="profile-card">
+            <div class="profile-photo-wrap">
+              <img data-bio-photo src="https://github.com/mathiasmora2232.png" alt="Foto de perfil de Mathias Mora" />
+            </div>
+            <figcaption>
+              <p class="panel-kicker">Perfil</p>
+              <h2 id="bio-title" data-bio-name>Mathias Mora</h2>
+              <p data-bio-role>Software Developer</p>
+              <small data-bio-photo-source>
+                Foto tomada del avatar publico de GitHub. Puedes cambiarla en el JSON.
+              </small>
+            </figcaption>
+          </figure>
+          <div class="now-panel compact" aria-labelledby="ahora-title">
+            <p class="panel-kicker">Ahora</p>
+            <h2 id="ahora-title">En modo construccion</h2>
+            <div id="now-list" class="now-list" aria-live="polite"></div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="section intro-grid" aria-label="Perfil de Mathias" data-bio-cards>
+      </section>
+
+      <section id="timeline" class="section split-section">
+        <div class="section-heading">
+          <p class="eyebrow">Cronologia</p>
+          <h2>Timeline expandible</h2>
+          <p>Hitos pequenos y grandes, ordenados por fecha y listos para crecer desde datos.</p>
+        </div>
+        <div id="timeline-list" class="timeline" aria-live="polite"></div>
+      </section>
+
+      <section id="proyectos" class="section">
+        <div class="section-heading wide">
+          <p class="eyebrow">Archivo de productos</p>
+          <h2>Proyectos como evidencia</h2>
+          <p>
+            Estos proyectos no son la bio completa; son rastros concretos de lo que voy probando,
+            aprendiendo y convirtiendo en sistemas. Lo privado o incompleto queda marcado sin inflarlo.
+          </p>
+        </div>
+        <div id="project-grid" class="project-grid" aria-live="polite"></div>
+      </section>
+
+      <section id="experiencia" class="section split-section">
+        <div class="section-heading">
+          <p class="eyebrow">Practica</p>
+          <h2>Experiencia</h2>
+          <p>Un mapa honesto de experiencia publica, aprendizaje y trabajo aplicado.</p>
+        </div>
+        <div id="experience-list" class="experience-list" aria-live="polite"></div>
+      </section>
+
+      <section id="stack" class="section">
+        <div class="section-heading wide">
+          <p class="eyebrow">Herramientas</p>
+          <h2>Stack con intencion</h2>
+        </div>
+        <div id="stack-grid" class="stack-grid" aria-live="polite"></div>
+      </section>
+
+      <section id="notas" class="section split-section">
+        <div class="section-heading">
+          <p class="eyebrow">Blog / notas</p>
+          <h2>Notas de construccion</h2>
+          <p>Entradas cortas en Markdown para registrar aprendizajes, decisiones y siguientes pasos.</p>
+        </div>
+        <div>
+          <div id="notes-list" class="notes-list" aria-live="polite"></div>
+          <article id="note-reader" class="note-reader" tabindex="-1" aria-live="polite"></article>
+        </div>
+      </section>
+
+      <section id="contacto" class="section contact-section">
+        <div>
+          <p class="eyebrow">About / contacto</p>
+          <h2>Estoy construyendo mi perfil como construyo software: por versiones.</h2>
+          <p>
+            Si algo mejora, lo documento. Si un proyecto madura, le doy historia. Si una idea todavia
+            no tiene evidencia, queda como pendiente. Esa es la gracia de este lugar.
+          </p>
+        </div>
+        <div class="contact-links">
+          <a href="https://github.com/mathiasmora2232" target="_blank" rel="noreferrer">GitHub</a>
+          <a href="https://github.com/mathiasmora2232/mathiasmora2232.github.io" target="_blank" rel="noreferrer">Repo del sitio</a>
+          <a href="./content/site-data.json">Editar datos</a>
+          <a href="./archive/university-web/Homepage.html">Archivo anterior</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Mathias Mora. Portfolio vivo servido con GitHub Pages.</p>
+      <a href="#inicio">Volver arriba</a>
+    </footer>
+
+    <script src="./assets/app.js" defer></script>
+  </body>
+</html>
