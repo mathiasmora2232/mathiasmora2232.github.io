@@ -178,7 +178,7 @@ a {
 .hero {
   min-height: calc(100vh - 74px);
   display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.58fr);
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 0.48fr);
   gap: clamp(2rem, 5vw, 5rem);
   align-items: center;
 }
@@ -202,8 +202,8 @@ h3 {
 }
 
 h1 {
-  max-width: 880px;
-  font-size: clamp(3rem, 8vw, 7.2rem);
+  max-width: 760px;
+  font-size: clamp(2.8rem, 6.8vw, 6.1rem);
   font-weight: 900;
 }
 
@@ -242,6 +242,89 @@ p {
   margin-top: 0.5rem;
 }
 
+.bio-facts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin: 0.3rem 0 0;
+}
+
+.bio-facts div {
+  min-width: 0;
+  padding: 0.78rem;
+  background: rgba(255, 250, 241, 0.68);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.bio-facts dt {
+  color: var(--accent);
+  font-size: 0.68rem;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.bio-facts dd {
+  margin: 0.2rem 0 0;
+  color: var(--ink);
+  font-weight: 760;
+}
+
+.bio-panel {
+  display: grid;
+  gap: 1rem;
+}
+
+.profile-card {
+  margin: 0;
+  padding: clamp(1rem, 2vw, 1.25rem);
+  background: rgba(255, 250, 241, 0.9);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.profile-photo-wrap {
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background: var(--panel-strong);
+}
+
+.profile-photo-wrap img,
+.bio-mobile-photo img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.profile-card figcaption {
+  display: grid;
+  gap: 0.45rem;
+  padding-top: 1rem;
+}
+
+.profile-card h2 {
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+}
+
+.profile-card small {
+  color: var(--muted);
+}
+
+.bio-mobile-photo {
+  display: none;
+  width: min(168px, 52vw);
+  aspect-ratio: 1;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--panel-strong);
+}
+
 .button.primary {
   background: var(--ink);
   color: var(--panel);
@@ -253,6 +336,7 @@ p {
 }
 
 .now-panel,
+.profile-card,
 .intro-grid article,
 .project-card,
 .experience-item,
@@ -267,6 +351,10 @@ p {
 
 .now-panel {
   padding: clamp(1.2rem, 3vw, 2rem);
+}
+
+.now-panel.compact {
+  box-shadow: none;
 }
 
 .now-panel h2 {
@@ -437,6 +525,11 @@ p {
   margin: 0.8rem 0 0;
 }
 
+.stack-card p {
+  color: var(--muted);
+  margin-top: 0.55rem;
+}
+
 .notes-list {
   margin-bottom: 1rem;
 }
@@ -498,6 +591,50 @@ p {
   border-top: 1px solid var(--line);
 }
 
+.project-story-page {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: clamp(5rem, 9vw, 8rem) clamp(1rem, 4vw, 2rem);
+}
+
+.project-story {
+  display: grid;
+  gap: 1.1rem;
+  background: rgba(255, 250, 241, 0.86);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: clamp(1.35rem, 4vw, 2.5rem);
+}
+
+.project-story h1 {
+  font-size: clamp(2.4rem, 7vw, 5.2rem);
+}
+
+.project-story h2 {
+  font-size: clamp(1.6rem, 3vw, 2.35rem);
+  margin-top: 1rem;
+}
+
+.project-story p,
+.project-story li {
+  color: var(--muted);
+  font-size: 1.06rem;
+}
+
+.project-story ul {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.project-story code {
+  color: var(--ink);
+  background: var(--panel-strong);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 0.08rem 0.28rem;
+}
+
 @media (max-width: 900px) {
   .menu-button {
     display: block;
@@ -532,6 +669,18 @@ p {
     padding-top: 5rem;
   }
 
+  .bio-panel > .profile-card {
+    display: none;
+  }
+
+  .bio-mobile-photo {
+    display: block;
+  }
+
+  .bio-facts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .section-heading {
     position: static;
   }
@@ -558,6 +707,10 @@ p {
 
   h1 {
     font-size: clamp(2.55rem, 15vw, 4rem);
+  }
+
+  .bio-facts {
+    grid-template-columns: 1fr;
   }
 
   .timeline summary {
