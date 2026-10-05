@@ -41,49 +41,41 @@
     <main id="contenido">
       <section id="inicio" class="hero section">
         <div class="hero-copy">
-          <p class="eyebrow">Portfolio vivo / archivo de carrera</p>
-          <h1>Construyo software, ordeno ideas y convierto proyectos en sistemas que pueden crecer.</h1>
-          <p class="hero-lead">
-            Soy Mathias Mora. Este sitio reemplaza una web universitaria antigua por una bitacora viva:
-            proyectos, aprendizajes, decisiones tecnicas y una timeline que puedo seguir ampliando.
+          <p class="eyebrow" data-bio-eyebrow>Bio / archivo vivo</p>
+          <div class="bio-mobile-photo" data-bio-mobile-photo></div>
+          <h1 data-bio-headline>Hola, soy Mathias. Construyo software y voy documentando el camino.</h1>
+          <p class="hero-lead" data-bio-lead>
+            Este sitio es mi bio viva: una mezcla de historia personal, proyectos, aprendizajes, repos y notas.
           </p>
+          <dl class="bio-facts" data-bio-meta aria-label="Datos rapidos de Mathias"></dl>
           <div class="hero-actions">
             <a class="button primary" href="#proyectos">Ver proyectos</a>
             <a class="button ghost" href="https://github.com/mathiasmora2232" target="_blank" rel="noreferrer">GitHub</a>
           </div>
         </div>
-        <aside class="now-panel" aria-labelledby="ahora-title">
-          <p class="panel-kicker">Ahora</p>
-          <h2 id="ahora-title">En modo construccion</h2>
-          <div id="now-list" class="now-list" aria-live="polite"></div>
+        <aside class="bio-panel" aria-labelledby="bio-title">
+          <figure class="profile-card">
+            <div class="profile-photo-wrap">
+              <img data-bio-photo src="https://github.com/mathiasmora2232.png" alt="Foto de perfil de Mathias Mora" />
+            </div>
+            <figcaption>
+              <p class="panel-kicker">Perfil</p>
+              <h2 id="bio-title" data-bio-name>Mathias Mora</h2>
+              <p data-bio-role>Software Developer</p>
+              <small data-bio-photo-source>
+                Foto tomada del avatar publico de GitHub. Puedes cambiarla en el JSON.
+              </small>
+            </figcaption>
+          </figure>
+          <div class="now-panel compact" aria-labelledby="ahora-title">
+            <p class="panel-kicker">Ahora</p>
+            <h2 id="ahora-title">En modo construccion</h2>
+            <div id="now-list" class="now-list" aria-live="polite"></div>
+          </div>
         </aside>
       </section>
 
-      <section class="section intro-grid" aria-label="Resumen">
-        <article>
-          <span class="section-number">01</span>
-          <h2>Bio corta</h2>
-          <p>
-            Desarrollador de software enfocado en aprender construyendo: interfaces, automatizacion,
-            backends pequenos y herramientas que resuelven problemas concretos.
-          </p>
-        </article>
-        <article>
-          <span class="section-number">02</span>
-          <h2>Como leer esto</h2>
-          <p>
-            Cada proyecto funciona como una historia: que problema toca, que estado tiene, que evidencia
-            publica existe y que falta documentar.
-          </p>
-        </article>
-        <article>
-          <span class="section-number">03</span>
-          <h2>Archivo anterior</h2>
-          <p>
-            La web universitaria original sigue disponible en
-            <a href="./archive/university-web/Homepage.html">archivo universitario</a>.
-          </p>
-        </article>
+      <section class="section intro-grid" aria-label="Perfil de Mathias" data-bio-cards>
       </section>
 
       <section id="timeline" class="section split-section">
@@ -98,10 +90,10 @@
       <section id="proyectos" class="section">
         <div class="section-heading wide">
           <p class="eyebrow">Archivo de productos</p>
-          <h2>Proyectos e historias</h2>
+          <h2>Proyectos como evidencia</h2>
           <p>
-            Priorizo lo verificable por repos publicos. Las ideas sin repo visible quedan marcadas como
-            pendientes de documentacion, para completarlas cuando haya evidencia.
+            Estos proyectos no son la bio completa; son rastros concretos de lo que voy probando,
+            aprendiendo y convirtiendo en sistemas. Lo privado o incompleto queda marcado sin inflarlo.
           </p>
         </div>
         <div id="project-grid" class="project-grid" aria-live="polite"></div>
@@ -119,7 +111,7 @@
       <section id="stack" class="section">
         <div class="section-heading wide">
           <p class="eyebrow">Herramientas</p>
-          <h2>Stack y zonas de aprendizaje</h2>
+          <h2>Stack con intencion</h2>
         </div>
         <div id="stack-grid" class="stack-grid" aria-live="polite"></div>
       </section>
@@ -139,10 +131,10 @@
       <section id="contacto" class="section contact-section">
         <div>
           <p class="eyebrow">About / contacto</p>
-          <h2>Este sitio tambien es una promesa de continuidad.</h2>
+          <h2>Estoy construyendo mi perfil como construyo software: por versiones.</h2>
           <p>
-            La idea no es tener un CV congelado, sino un lugar donde cada avance deje rastro:
-            repos, notas, capturas, aprendizajes y proximos pasos.
+            Si algo mejora, lo documento. Si un proyecto madura, le doy historia. Si una idea todavia
+            no tiene evidencia, queda como pendiente. Esa es la gracia de este lugar.
           </p>
         </div>
         <div class="contact-links">

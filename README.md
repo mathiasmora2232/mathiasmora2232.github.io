@@ -13,6 +13,20 @@ Portfolio vivo de Mathias Mora, servido desde `docs/` con GitHub Pages.
 
 ## Editar contenido
 
+Para cambiar la bio del inicio, edita `bio` dentro de `docs/content/site-data.json`.
+
+La foto actual se toma del avatar publico de GitHub:
+
+```json
+"src": "https://github.com/mathiasmora2232.png"
+```
+
+Para usar una foto propia, guarda la imagen como `docs/assets/profile.jpg` y cambia la ruta a:
+
+```json
+"src": "./assets/profile.jpg"
+```
+
 Para agregar un hito o proyecto, edita `docs/content/site-data.json`.
 
 Para agregar una nota:

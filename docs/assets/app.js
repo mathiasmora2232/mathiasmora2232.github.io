@@ -64,6 +64,52 @@ const markdownToHtml = (markdown) => {
   return html.join("");
 };
 
+const renderBio = (bio) => {
+  if (!bio) return;
+
+  $("[data-bio-eyebrow]").textContent = bio.eyebrow;
+  $("[data-bio-headline]").textContent = bio.headline;
+  $("[data-bio-lead]").textContent = bio.lead;
+  $("[data-bio-name]").textContent = bio.name;
+  $("[data-bio-role]").textContent = `${bio.role} / ${bio.location}`;
+  $("[data-bio-photo-source]").textContent = bio.photo.source;
+
+  const photo = $("[data-bio-photo]");
+  photo.src = bio.photo.src;
+  photo.alt = bio.photo.alt;
+
+  const mobilePhoto = $("[data-bio-mobile-photo]");
+  mobilePhoto.innerHTML = `<img src="${escapeHtml(bio.photo.src)}" alt="${escapeHtml(bio.photo.alt)}" />`;
+
+  $("[data-bio-meta]").innerHTML = `
+    <div>
+      <dt>Nombre</dt>
+      <dd>${escapeHtml(bio.name)}</dd>
+    </div>
+    <div>
+      <dt>Rol</dt>
+      <dd>${escapeHtml(bio.role)}</dd>
+    </div>
+    <div>
+      <dt>Base</dt>
+      <dd>${escapeHtml(bio.location)}</dd>
+    </div>
+    ${bio.facts.map((fact) => `<div><dt>Nota</dt><dd>${escapeHtml(fact)}</dd></div>`).join("")}
+  `;
+
+  $("[data-bio-cards]").innerHTML = bio.cards
+    .map(
+      (card, index) => `
+        <article>
+          <span class="section-number">${String(index + 1).padStart(2, "0")} / ${escapeHtml(card.kicker)}</span>
+          <h2>${escapeHtml(card.title)}</h2>
+          <p>${escapeHtml(card.body)}</p>
+        </article>
+      `,
+    )
+    .join("");
+};
+
 const renderNow = (items) => {
   $("#now-list").innerHTML = items
     .map(
@@ -108,13 +154,18 @@ const renderProjects = (projects) => {
           ${tagList(project.stack)}
           <footer>
             ${
+              project.liveUrl
+                ? `<a class="text-link" href="${escapeHtml(project.liveUrl)}" target="_blank" rel="noreferrer">Ver sitio</a>`
+                : ""
+            }
+            ${
               project.repo
                 ? `<a class="text-link" href="${escapeHtml(project.repo)}" target="_blank" rel="noreferrer">Repositorio</a>`
                 : ""
             }
             ${
               project.story
-                ? `<a class="text-link" href="${escapeHtml(project.story)}" target="_blank" rel="noreferrer">Historia</a>`
+                ? `<a class="text-link" href="${escapeHtml(project.story)}">Ver historia</a>`
                 : ""
             }
           </footer>
@@ -145,6 +196,7 @@ const renderStack = (groups) => {
       (group) => `
         <article class="stack-card">
           <h3>${escapeHtml(group.title)}</h3>
+          ${group.body ? `<p>${escapeHtml(group.body)}</p>` : ""}
           <ul>
             ${group.items.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}
           </ul>
@@ -211,6 +263,7 @@ const init = async () => {
   setupMenu();
   const response = await fetch("./content/site-data.json");
   state.data = await response.json();
+  renderBio(state.data.bio);
   renderNow(state.data.now);
   renderTimeline(state.data.timeline);
   renderProjects(state.data.projects);
