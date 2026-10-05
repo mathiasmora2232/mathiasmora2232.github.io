@@ -1,0 +1,172 @@
+{
+  "now": [
+    {
+      "title": "Redisenando este GitHub Pages",
+      "detail": "La web universitaria antigua queda archivada y el dominio pasa a contar una trayectoria tecnica viva."
+    },
+    {
+      "title": "Documentando proyectos reales",
+      "detail": "DevFlow aparece como repositorio publico reciente; otros proyectos se listan solo cuando haya evidencia o contexto editable."
+    },
+    {
+      "title": "Construyendo una base ampliable",
+      "detail": "Timeline, proyectos, experiencia, stack y notas salen de JSON/Markdown para crecer sin tocar la UI."
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2026-10",
+      "title": "DevFlow aparece como proyecto publico",
+      "body": "Repositorio publico creado y actualizado en octubre de 2026. El portfolio lo trata como proyecto en desarrollo y enlaza a la evidencia disponible.",
+      "tags": ["Python", "repo publico", "en desarrollo"]
+    },
+    {
+      "date": "2026",
+      "title": "Exploracion de herramientas y productos pequenos",
+      "body": "Repositorios publicos como apppdf, futboldemo, tictacto y PaginaWebmusic muestran practica con interfaces, utilidades y prototipos web.",
+      "tags": ["HTML", "JavaScript", "prototipos"]
+    },
+    {
+      "date": "2025-2026",
+      "title": "Web universitaria estatica",
+      "body": "El sitio original de GitHub Pages se uso para una experiencia academica con paginas como Homepage, Login, Malla, Materias y Calendario. Ahora queda archivado.",
+      "tags": ["GitHub Pages", "HTML", "CSS", "archivo"]
+    },
+    {
+      "date": "2021-2026",
+      "title": "Perfil y presencia publica en GitHub",
+      "body": "El perfil publico mantiene repos propios y forks de aprendizaje. Esta pagina organiza esa actividad como una narrativa mas clara.",
+      "tags": ["GitHub", "aprendizaje continuo"]
+    }
+  ],
+  "projects": [
+    {
+      "name": "DevFlow",
+      "kind": "Proyecto destacado",
+      "status": "Repositorio publico activo",
+      "summary": "Proyecto publico reciente en Python. Se presenta como una pieza en construccion hasta que el README y la historia tecnica documenten alcance, decisiones y uso.",
+      "stack": ["Python", "workflow", "por documentar"],
+      "repo": "https://github.com/mathiasmora2232/DevFlow",
+      "story": "./content/projects/devflow.md",
+      "featured": true
+    },
+    {
+      "name": "SmartAhorra",
+      "kind": "Producto por documentar",
+      "status": "Sin repositorio publico verificado en esta revision",
+      "summary": "Reservado para documentar historia, problema, arquitectura, capturas e hitos cuando exista evidencia publica o material fuente.",
+      "stack": ["producto", "finanzas", "pendiente"],
+      "repo": "",
+      "story": "./content/projects/smartahorra.md",
+      "featured": true
+    },
+    {
+      "name": "StellarCode Studio",
+      "kind": "Producto por documentar",
+      "status": "Sin repositorio publico verificado en esta revision",
+      "summary": "Ficha preparada para convertirlo en historia detallada cuando se agreguen repos, screenshots, enlaces o notas de producto.",
+      "stack": ["studio", "software", "pendiente"],
+      "repo": "",
+      "story": "./content/projects/stellarcode-studio.md",
+      "featured": true
+    },
+    {
+      "name": "Steatify",
+      "kind": "Producto por documentar",
+      "status": "Sin repositorio publico verificado en esta revision",
+      "summary": "Espacio listo para explicar proposito, estado, stack y aprendizajes sin afirmar logros todavia no verificados.",
+      "stack": ["producto", "pendiente"],
+      "repo": "",
+      "story": "./content/projects/steatify.md",
+      "featured": true
+    },
+    {
+      "name": "PaginaWebmusic",
+      "kind": "Proyecto web",
+      "status": "Repositorio publico",
+      "summary": "Practica de pagina web en HTML. Sirve como evidencia de exploracion frontend y puede evolucionar a una nota tecnica.",
+      "stack": ["HTML", "frontend"],
+      "repo": "https://github.com/mathiasmora2232/PaginaWebmusic",
+      "story": "",
+      "featured": false
+    },
+    {
+      "name": "tictacto",
+      "kind": "Juego / practica",
+      "status": "Repositorio publico",
+      "summary": "Proyecto JavaScript para practica de interaccion y logica sencilla.",
+      "stack": ["JavaScript", "UI"],
+      "repo": "https://github.com/mathiasmora2232/tictacto",
+      "story": "",
+      "featured": false
+    },
+    {
+      "name": "apppdf",
+      "kind": "Utilidad",
+      "status": "Repositorio publico",
+      "summary": "Proyecto HTML relacionado con PDF. Pendiente de ampliar con objetivo, flujo y capturas.",
+      "stack": ["HTML", "PDF"],
+      "repo": "https://github.com/mathiasmora2232/apppdf",
+      "story": "",
+      "featured": false
+    },
+    {
+      "name": "Asistencias",
+      "kind": "Sistema aplicado",
+      "status": "Repositorio publico",
+      "summary": "Repositorio PHP que puede documentarse como experiencia con sistemas de gestion o registro.",
+      "stack": ["PHP", "gestion"],
+      "repo": "https://github.com/mathiasmora2232/Asistencias",
+      "story": "",
+      "featured": false
+    }
+  ],
+  "experience": [
+    {
+      "period": "Actual",
+      "title": "Construccion de portfolio vivo",
+      "body": "Migracion de una web academica estatica a un archivo personal mantenible, con contenido separado de la presentacion.",
+      "tags": ["GitHub Pages", "HTML", "CSS", "JavaScript"]
+    },
+    {
+      "period": "2026",
+      "title": "Prototipos y herramientas publicas",
+      "body": "Actividad publica en repos de Python, HTML, JavaScript, PHP y Java. La pagina enlaza solo proyectos visibles o deja pendiente lo privado/no verificado.",
+      "tags": ["Python", "JavaScript", "PHP", "Java"]
+    },
+    {
+      "period": "2025-2026",
+      "title": "Web universitaria archivada",
+      "body": "Experiencia de paginas estaticas con navegacion, login simulado, calendario, materias y contenido academico.",
+      "tags": ["HTML", "CSS", "JS"]
+    }
+  ],
+  "stack": [
+    {
+      "title": "Frontend",
+      "items": ["HTML semantico", "CSS responsive", "JavaScript sin framework", "GitHub Pages"]
+    },
+    {
+      "title": "Backend / scripting",
+      "items": ["Python", "PHP", "Java", "C# en exploracion"]
+    },
+    {
+      "title": "Producto y operacion",
+      "items": ["Documentacion incremental", "Repos como evidencia", "Timeline de hitos", "Historias tecnicas"]
+    }
+  ],
+  "notes": [
+    {
+      "date": "2026-10-05",
+      "title": "Convertir el sitio en bitacora viva",
+      "summary": "Primera nota: por que el portfolio debe ser un archivo expandible y no un CV congelado.",
+      "file": "./content/posts/convertir-sitio-en-bitacora.md"
+    },
+    {
+      "date": "2026-10-05",
+      "title": "Como agregar un nuevo hito",
+      "summary": "Guia corta para sumar timeline, proyecto o nota sin tocar estilos ni estructura.",
+      "file": "./content/posts/como-agregar-hitos.md"
+    }
+  ]
+}
